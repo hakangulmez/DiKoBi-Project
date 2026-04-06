@@ -1,0 +1,478 @@
+[
+  {
+    "experiment_id": "exp_007",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-21T20:26:40.212565",
+    "category": "3_Dm_Kons",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "d145a437",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Fachsprache - Decision Making - Konsistenz\n\nDecision Making (Dm): Konstruktive (kognitiv aktive) Auseinandersetzung mit Fachbegriffen ermöglichen.\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS Fachbegriffe selbstständig/aktiv (konstruktiv) bearbeiten, statt nur reproduktiv wiederzugeben (z.B. Zuordnungsaufgaben, eigenaktive Erarbeitung, Überprüfen richtiger/falscher Aussagen).\n\nDefinition „konstruktiv“ (Kurzfassung): aktive kognitive Auseinandersetzung; reine Reproduktion reicht nicht aus.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur konstruktiven SuS-Auseinandersetzung mit Fachbegriffen\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- SuS sollen „mehr einbezogen werden“ ohne konkrete kognitive Aufgabe\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Aufgaben/Settings, in denen SuS Fachbegriffe aktiv zuordnen/erarbeiten/prüfen\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Kons.csv",
+      "split": "test",
+      "total_samples": 203,
+      "samples_used": 203,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6600985221674877,
+      "qwk": 0.48713156002875624,
+      "mse": 0.6059113300492611,
+      "mae": 0.42857142857142855,
+      "confusion_matrix": [
+        [
+          106,
+          17,
+          13
+        ],
+        [
+          12,
+          14,
+          17
+        ],
+        [
+          5,
+          5,
+          14
+        ]
+      ],
+      "accuracy_class_0": 0.7794117647058824,
+      "accuracy_class_1": 0.32558139534883723,
+      "accuracy_class_2": 0.5833333333333334
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260121_202640__3_Dm_Kons__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260121_202640__3_Dm_Kons__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260121_202640__3_Dm_Kons__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260121_202640__3_Dm_Kons__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-21T20:27:46.148331",
+    "category": "3_Dm_Kons",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "f85f866d",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Fachsprache - Decision Making - Konsistenz\n\nDecision Making (Dm): Konstruktive (kognitiv aktive) Auseinandersetzung mit Fachbegriffen ermöglichen.\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS Fachbegriffe selbstständig/aktiv (konstruktiv) bearbeiten, statt nur reproduktiv wiederzugeben (z.B. Zuordnungsaufgaben, eigenaktive Erarbeitung, Überprüfen richtiger/falscher Aussagen).\n\nDefinition „konstruktiv“ (Kurzfassung): aktive kognitive Auseinandersetzung; reine Reproduktion reicht nicht aus.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur konstruktiven SuS-Auseinandersetzung mit Fachbegriffen\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- SuS sollen „mehr einbezogen werden“ ohne konkrete kognitive Aufgabe\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Aufgaben/Settings, in denen SuS Fachbegriffe aktiv zuordnen/erarbeiten/prüfen\n\n\nExamples:\n\nExample 1:\nText: \"SuS beim Erstellen des Tafelbilds mit einbeziehen: SuS legen die Karten/Bestandteile selbst an die Tafel an.\"\nRating: 2\n\nExample 2:\nText: \"Schüler selbst die Bestandteile an die Tafel kleben lassen\"\nRating: 1\n\nExample 3:\nText: \"Film zeigen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Kons.csv",
+      "split": "test",
+      "total_samples": 203,
+      "samples_used": 203,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.645320197044335,
+      "qwk": 0.4843171153371203,
+      "mse": 0.7093596059113301,
+      "mae": 0.4729064039408867,
+      "confusion_matrix": [
+        [
+          98,
+          17,
+          21
+        ],
+        [
+          7,
+          14,
+          22
+        ],
+        [
+          3,
+          2,
+          19
+        ]
+      ],
+      "accuracy_class_0": 0.7205882352941176,
+      "accuracy_class_1": 0.32558139534883723,
+      "accuracy_class_2": 0.7916666666666666
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260121_202746__3_Dm_Kons__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260121_202746__3_Dm_Kons__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260121_202746__3_Dm_Kons__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260121_202746__3_Dm_Kons__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-21T20:53:25.157888",
+    "category": "3_Dm_Kons",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "aee14b98",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Fachsprache - Decision Making - Konsistenz\n\nDecision Making (Dm): Konstruktive (kognitiv aktive) Auseinandersetzung mit Fachbegriffen ermöglichen.\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS Fachbegriffe selbstständig/aktiv (konstruktiv) bearbeiten, statt nur reproduktiv wiederzugeben (z.B. Zuordnungsaufgaben, eigenaktive Erarbeitung, Überprüfen richtiger/falscher Aussagen).\n\nDefinition „konstruktiv“ (Kurzfassung): aktive kognitive Auseinandersetzung; reine Reproduktion reicht nicht aus.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur konstruktiven SuS-Auseinandersetzung mit Fachbegriffen\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- SuS sollen „mehr einbezogen werden“ ohne konkrete kognitive Aufgabe\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Aufgaben/Settings, in denen SuS Fachbegriffe aktiv zuordnen/erarbeiten/prüfen\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Kons.csv",
+      "split": "test",
+      "total_samples": 203,
+      "samples_used": 203,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6059113300492611,
+      "qwk": 0.49955370425468615,
+      "mse": 0.5714285714285714,
+      "mae": 0.45320197044334976,
+      "confusion_matrix": [
+        [
+          89,
+          37,
+          10
+        ],
+        [
+          8,
+          20,
+          15
+        ],
+        [
+          2,
+          8,
+          14
+        ]
+      ],
+      "accuracy_class_0": 0.6544117647058824,
+      "accuracy_class_1": 0.46511627906976744,
+      "accuracy_class_2": 0.5833333333333334
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260121_205325__3_Dm_Kons__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260121_205325__3_Dm_Kons__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260121_205325__3_Dm_Kons__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260121_205325__3_Dm_Kons__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-21T20:56:19.187812",
+    "category": "3_Dm_Kons",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "af58e342",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Fachsprache - Decision Making - Konsistenz\n\nDecision Making (Dm): Konstruktive (kognitiv aktive) Auseinandersetzung mit Fachbegriffen ermöglichen.\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS Fachbegriffe selbstständig/aktiv (konstruktiv) bearbeiten, statt nur reproduktiv wiederzugeben (z.B. Zuordnungsaufgaben, eigenaktive Erarbeitung, Überprüfen richtiger/falscher Aussagen).\n\nDefinition „konstruktiv“ (Kurzfassung): aktive kognitive Auseinandersetzung; reine Reproduktion reicht nicht aus.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur konstruktiven SuS-Auseinandersetzung mit Fachbegriffen\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- SuS sollen „mehr einbezogen werden“ ohne konkrete kognitive Aufgabe\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Aufgaben/Settings, in denen SuS Fachbegriffe aktiv zuordnen/erarbeiten/prüfen\n\n\nExamples:\n\nExample 1:\nText: \"SuS beim Erstellen des Tafelbilds mit einbeziehen: SuS legen die Karten/Bestandteile selbst an die Tafel an.\"\nRating: 2\n\nExample 2:\nText: \"Schüler selbst die Bestandteile an die Tafel kleben lassen\"\nRating: 1\n\nExample 3:\nText: \"Film zeigen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Kons.csv",
+      "split": "test",
+      "total_samples": 203,
+      "samples_used": 203,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5862068965517241,
+      "qwk": 0.43870967741935474,
+      "mse": 0.7536945812807881,
+      "mae": 0.5270935960591133,
+      "confusion_matrix": [
+        [
+          84,
+          31,
+          21
+        ],
+        [
+          5,
+          18,
+          20
+        ],
+        [
+          2,
+          5,
+          17
+        ]
+      ],
+      "accuracy_class_0": 0.6176470588235294,
+      "accuracy_class_1": 0.4186046511627907,
+      "accuracy_class_2": 0.7083333333333334
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260121_205619__3_Dm_Kons__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260121_205619__3_Dm_Kons__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260121_205619__3_Dm_Kons__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260121_205619__3_Dm_Kons__exp_010"
+    }
+  },
+  {
+    "experiment_id": "exp_011",
+    "version": "exp_011",
+    "timestamp": "2026-01-27T23:21:41.032300",
+    "category": "3_Dm_Kons",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Kons.csv",
+      "split": "test",
+      "total_samples": 203,
+      "samples_used": 203,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.625615763546798,
+      "qwk": 0.4834860798893308,
+      "mse": 0.5073891625615764,
+      "mae": 0.4187192118226601,
+      "confusion_matrix": [
+        [
+          93,
+          37,
+          6
+        ],
+        [
+          11,
+          24,
+          8
+        ],
+        [
+          3,
+          11,
+          10
+        ]
+      ],
+      "accuracy_class_0": 0.6838235294117647,
+      "accuracy_class_1": 0.5581395348837209,
+      "accuracy_class_2": 0.4166666666666667
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_232141__3_Dm_Kons__exp_011\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_232141__3_Dm_Kons__exp_011\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_232141__3_Dm_Kons__exp_011\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_232141__3_Dm_Kons__exp_011"
+    }
+  },
+  {
+    "experiment_id": "exp_012",
+    "version": "exp_012",
+    "timestamp": "2026-01-27T23:23:02.802268",
+    "category": "3_Dm_Kons",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Kons.csv",
+      "split": "test",
+      "total_samples": 203,
+      "samples_used": 203,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6650246305418719,
+      "qwk": 0.526388172597559,
+      "mse": 0.46798029556650245,
+      "mae": 0.3793103448275862,
+      "confusion_matrix": [
+        [
+          102,
+          28,
+          6
+        ],
+        [
+          11,
+          23,
+          9
+        ],
+        [
+          3,
+          11,
+          10
+        ]
+      ],
+      "accuracy_class_0": 0.75,
+      "accuracy_class_1": 0.5348837209302325,
+      "accuracy_class_2": 0.4166666666666667
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_232302__3_Dm_Kons__exp_012\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_232302__3_Dm_Kons__exp_012\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_232302__3_Dm_Kons__exp_012\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_232302__3_Dm_Kons__exp_012"
+    }
+  },
+  {
+    "experiment_id": "exp_013",
+    "version": "exp_013",
+    "timestamp": "2026-01-28T02:50:14.165874",
+    "category": "3_Dm_Kons",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Kons.csv",
+      "split": "test",
+      "total_samples": 203,
+      "samples_used": 203,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6354679802955665,
+      "qwk": 0.4826002473061296,
+      "mse": 0.4975369458128079,
+      "mae": 0.4088669950738916,
+      "confusion_matrix": [
+        [
+          94,
+          36,
+          6
+        ],
+        [
+          10,
+          26,
+          7
+        ],
+        [
+          3,
+          12,
+          9
+        ]
+      ],
+      "accuracy_class_0": 0.6911764705882353,
+      "accuracy_class_1": 0.6046511627906976,
+      "accuracy_class_2": 0.375
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_025014__3_Dm_Kons__exp_013\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_025014__3_Dm_Kons__exp_013\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_025014__3_Dm_Kons__exp_013\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_025014__3_Dm_Kons__exp_013"
+    }
+  },
+  {
+    "experiment_id": "exp_014",
+    "version": "exp_014",
+    "timestamp": "2026-01-28T02:53:36.328708",
+    "category": "3_Dm_Kons",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Kons.csv",
+      "split": "test",
+      "total_samples": 203,
+      "samples_used": 203,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6650246305418719,
+      "qwk": 0.5396825396825397,
+      "mse": 0.45320197044334976,
+      "mae": 0.37438423645320196,
+      "confusion_matrix": [
+        [
+          105,
+          26,
+          5
+        ],
+        [
+          15,
+          19,
+          9
+        ],
+        [
+          3,
+          10,
+          11
+        ]
+      ],
+      "accuracy_class_0": 0.7720588235294118,
+      "accuracy_class_1": 0.4418604651162791,
+      "accuracy_class_2": 0.4583333333333333
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_025336__3_Dm_Kons__exp_014\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_025336__3_Dm_Kons__exp_014\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_025336__3_Dm_Kons__exp_014\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_025336__3_Dm_Kons__exp_014"
+    }
+  }
+]

@@ -1,0 +1,578 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T10:59:20.523463",
+    "category": "1_Dm_M",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Unterrichtseinstieg - Beschreiben/Merken - Motivation. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Unterrichtseinstieg - Beschreiben/Merken - Motivation\n\nDecision Making (Dm): Handlungsalternative zur Verbesserung der Motivation / des situationalen Interesses im Unterrichtseinstieg.\n\nKodiert wird, ob die Antwort beschreibt, wie die Lehrkraft (aus fachdidaktischer Perspektive) anders handeln würde, um die zuvor kritisierten Motivations-/Interessaspekte zu verbessern (z.B. Catch-Komponente, Alltagsbezug, Ich-Nähe, Anschaulichkeit).\n\nKeine Kodierung, wenn nur eine Methode/Sozialform ohne Motivationsbezug genannt wird (PK) oder wenn kein Bezug zu den vorher kritisierten Aspekten erkennbar ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage (kein Vorschlag) ODER\n- Vorschlag ohne Bezug zu Motivation/Interesse\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative, wenig konkret, ohne Umsetzungsbeispiel\n- z.B. „Alltagsbezug herstellen“, „Catch-Komponente einbauen“\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Alternativen ODER\n- konkrete Beispiele/Umsetzungsschritte, die erklären, wie Motivation/Interesse geweckt wird\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_Dm_M.csv",
+      "split": "test",
+      "total_samples": 234,
+      "samples_used": 234,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.41452991452991456,
+      "qwk": 0.24790993200312128,
+      "mse": 0.7393162393162394,
+      "mae": 0.6367521367521367,
+      "confusion_matrix": [
+        [
+          52,
+          98,
+          12
+        ],
+        [
+          4,
+          41,
+          16
+        ],
+        [
+          0,
+          7,
+          4
+        ]
+      ],
+      "accuracy_class_0": 0.32098765432098764,
+      "accuracy_class_1": 0.6721311475409836,
+      "accuracy_class_2": 0.36363636363636365
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_105920__1_Dm_M__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_105920__1_Dm_M__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_105920__1_Dm_M__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_105920__1_Dm_M__exp_001"
+    },
+    "prompt_hash": "efd9465a"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:00:12.917036",
+    "category": "1_Dm_M",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Unterrichtseinstieg - Beschreiben/Merken - Motivation. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Unterrichtseinstieg - Beschreiben/Merken - Motivation\n\nDecision Making (Dm): Handlungsalternative zur Verbesserung der Motivation / des situationalen Interesses im Unterrichtseinstieg.\n\nKodiert wird, ob die Antwort beschreibt, wie die Lehrkraft (aus fachdidaktischer Perspektive) anders handeln würde, um die zuvor kritisierten Motivations-/Interessaspekte zu verbessern (z.B. Catch-Komponente, Alltagsbezug, Ich-Nähe, Anschaulichkeit).\n\nKeine Kodierung, wenn nur eine Methode/Sozialform ohne Motivationsbezug genannt wird (PK) oder wenn kein Bezug zu den vorher kritisierten Aspekten erkennbar ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage (kein Vorschlag) ODER\n- Vorschlag ohne Bezug zu Motivation/Interesse\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative, wenig konkret, ohne Umsetzungsbeispiel\n- z.B. „Alltagsbezug herstellen“, „Catch-Komponente einbauen“\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Alternativen ODER\n- konkrete Beispiele/Umsetzungsschritte, die erklären, wie Motivation/Interesse geweckt wird\n\n\nExamples:\n\nExample 1:\nText: \"Die Lehrerin könnte eine Geschichte aus dem Alltag erzählen, die Kinder vor ein Problem stellen oder mit einem Experiment in das Thema starten\"\nRating: 2\n\nExample 2:\nText: \"Alltagsbezug und Relevanz sichtbar machen; Catch-Komponente einbauen\"\nRating: 1\n\nExample 3:\nText: \"Genauere Fragen stellen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_Dm_M.csv",
+      "split": "test",
+      "total_samples": 234,
+      "samples_used": 234,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.48717948717948717,
+      "qwk": 0.2954434662919738,
+      "mse": 0.8974358974358975,
+      "mae": 0.6410256410256411,
+      "confusion_matrix": [
+        [
+          76,
+          57,
+          29
+        ],
+        [
+          5,
+          29,
+          27
+        ],
+        [
+          1,
+          1,
+          9
+        ]
+      ],
+      "accuracy_class_0": 0.4691358024691358,
+      "accuracy_class_1": 0.47540983606557374,
+      "accuracy_class_2": 0.8181818181818182
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_110012__1_Dm_M__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_110012__1_Dm_M__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_110012__1_Dm_M__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_110012__1_Dm_M__exp_002"
+    },
+    "prompt_hash": "d53c4912"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T17:21:47.982911",
+    "category": "1_Dm_M",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "5dd0f0dd",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Unterrichtseinstieg - Beschreiben/Merken - Motivation\n\nDecision Making (Dm): Handlungsalternative zur Verbesserung der Motivation / des situationalen Interesses im Unterrichtseinstieg.\n\nKodiert wird, ob die Antwort beschreibt, wie die Lehrkraft (aus fachdidaktischer Perspektive) anders handeln würde, um die zuvor kritisierten Motivations-/Interessaspekte zu verbessern (z.B. Catch-Komponente, Alltagsbezug, Ich-Nähe, Anschaulichkeit).\n\nKeine Kodierung, wenn nur eine Methode/Sozialform ohne Motivationsbezug genannt wird (PK) oder wenn kein Bezug zu den vorher kritisierten Aspekten erkennbar ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage (kein Vorschlag) ODER\n- Vorschlag ohne Bezug zu Motivation/Interesse\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative, wenig konkret, ohne Umsetzungsbeispiel\n- z.B. „Alltagsbezug herstellen“, „Catch-Komponente einbauen“\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Alternativen ODER\n- konkrete Beispiele/Umsetzungsschritte, die erklären, wie Motivation/Interesse geweckt wird\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_Dm_M.csv",
+      "split": "test",
+      "total_samples": 234,
+      "samples_used": 234,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5341880341880342,
+      "qwk": 0.37134892740273895,
+      "mse": 0.5683760683760684,
+      "mae": 0.5,
+      "confusion_matrix": [
+        [
+          81,
+          74,
+          7
+        ],
+        [
+          6,
+          39,
+          16
+        ],
+        [
+          1,
+          5,
+          5
+        ]
+      ],
+      "accuracy_class_0": 0.5,
+      "accuracy_class_1": 0.639344262295082,
+      "accuracy_class_2": 0.45454545454545453
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_172147__1_Dm_M__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_172147__1_Dm_M__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_172147__1_Dm_M__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_172147__1_Dm_M__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T17:25:13.736326",
+    "category": "1_Dm_M",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "6d1608fd",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Unterrichtseinstieg - Beschreiben/Merken - Motivation\n\nDecision Making (Dm): Handlungsalternative zur Verbesserung der Motivation / des situationalen Interesses im Unterrichtseinstieg.\n\nKodiert wird, ob die Antwort beschreibt, wie die Lehrkraft (aus fachdidaktischer Perspektive) anders handeln würde, um die zuvor kritisierten Motivations-/Interessaspekte zu verbessern (z.B. Catch-Komponente, Alltagsbezug, Ich-Nähe, Anschaulichkeit).\n\nKeine Kodierung, wenn nur eine Methode/Sozialform ohne Motivationsbezug genannt wird (PK) oder wenn kein Bezug zu den vorher kritisierten Aspekten erkennbar ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage (kein Vorschlag) ODER\n- Vorschlag ohne Bezug zu Motivation/Interesse\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative, wenig konkret, ohne Umsetzungsbeispiel\n- z.B. „Alltagsbezug herstellen“, „Catch-Komponente einbauen“\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Alternativen ODER\n- konkrete Beispiele/Umsetzungsschritte, die erklären, wie Motivation/Interesse geweckt wird\n\n\nExamples:\n\nExample 1:\nText: \"Die Lehrerin könnte eine Geschichte aus dem Alltag erzählen, die Kinder vor ein Problem stellen oder mit einem Experiment in das Thema starten\"\nRating: 2\n\nExample 2:\nText: \"Alltagsbezug und Relevanz sichtbar machen; Catch-Komponente einbauen\"\nRating: 1\n\nExample 3:\nText: \"Genauere Fragen stellen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_Dm_M.csv",
+      "split": "test",
+      "total_samples": 234,
+      "samples_used": 234,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5982905982905983,
+      "qwk": 0.41049084053521967,
+      "mse": 0.6452991452991453,
+      "mae": 0.4829059829059829,
+      "confusion_matrix": [
+        [
+          100,
+          44,
+          18
+        ],
+        [
+          7,
+          31,
+          23
+        ],
+        [
+          1,
+          1,
+          9
+        ]
+      ],
+      "accuracy_class_0": 0.6172839506172839,
+      "accuracy_class_1": 0.5081967213114754,
+      "accuracy_class_2": 0.8181818181818182
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_172513__1_Dm_M__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_172513__1_Dm_M__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_172513__1_Dm_M__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_172513__1_Dm_M__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T18:33:44.787907",
+    "category": "1_Dm_M",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "76f9ffe8",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Unterrichtseinstieg - Beschreiben/Merken - Motivation\n\nDecision Making (Dm): Handlungsalternative zur Verbesserung der Motivation / des situationalen Interesses im Unterrichtseinstieg.\n\nKodiert wird, ob die Antwort beschreibt, wie die Lehrkraft (aus fachdidaktischer Perspektive) anders handeln würde, um die zuvor kritisierten Motivations-/Interessaspekte zu verbessern (z.B. Catch-Komponente, Alltagsbezug, Ich-Nähe, Anschaulichkeit).\n\nKeine Kodierung, wenn nur eine Methode/Sozialform ohne Motivationsbezug genannt wird (PK) oder wenn kein Bezug zu den vorher kritisierten Aspekten erkennbar ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage (kein Vorschlag) ODER\n- Vorschlag ohne Bezug zu Motivation/Interesse\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative, wenig konkret, ohne Umsetzungsbeispiel\n- z.B. „Alltagsbezug herstellen“, „Catch-Komponente einbauen“\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Alternativen ODER\n- konkrete Beispiele/Umsetzungsschritte, die erklären, wie Motivation/Interesse geweckt wird\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_Dm_M.csv",
+      "split": "test",
+      "total_samples": 234,
+      "samples_used": 234,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5470085470085471,
+      "qwk": 0.3891830985915492,
+      "mse": 0.594017094017094,
+      "mae": 0.5,
+      "confusion_matrix": [
+        [
+          87,
+          65,
+          10
+        ],
+        [
+          8,
+          34,
+          19
+        ],
+        [
+          1,
+          3,
+          7
+        ]
+      ],
+      "accuracy_class_0": 0.5370370370370371,
+      "accuracy_class_1": 0.5573770491803278,
+      "accuracy_class_2": 0.6363636363636364
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_183344__1_Dm_M__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_183344__1_Dm_M__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_183344__1_Dm_M__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_183344__1_Dm_M__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T18:35:04.135255",
+    "category": "1_Dm_M",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "6258ebe4",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Unterrichtseinstieg - Beschreiben/Merken - Motivation\n\nDecision Making (Dm): Handlungsalternative zur Verbesserung der Motivation / des situationalen Interesses im Unterrichtseinstieg.\n\nKodiert wird, ob die Antwort beschreibt, wie die Lehrkraft (aus fachdidaktischer Perspektive) anders handeln würde, um die zuvor kritisierten Motivations-/Interessaspekte zu verbessern (z.B. Catch-Komponente, Alltagsbezug, Ich-Nähe, Anschaulichkeit).\n\nKeine Kodierung, wenn nur eine Methode/Sozialform ohne Motivationsbezug genannt wird (PK) oder wenn kein Bezug zu den vorher kritisierten Aspekten erkennbar ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage (kein Vorschlag) ODER\n- Vorschlag ohne Bezug zu Motivation/Interesse\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative, wenig konkret, ohne Umsetzungsbeispiel\n- z.B. „Alltagsbezug herstellen“, „Catch-Komponente einbauen“\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Alternativen ODER\n- konkrete Beispiele/Umsetzungsschritte, die erklären, wie Motivation/Interesse geweckt wird\n\n\nExamples:\n\nExample 1:\nText: \"Die Lehrerin könnte eine Geschichte aus dem Alltag erzählen, die Kinder vor ein Problem stellen oder mit einem Experiment in das Thema starten\"\nRating: 2\n\nExample 2:\nText: \"Alltagsbezug und Relevanz sichtbar machen; Catch-Komponente einbauen\"\nRating: 1\n\nExample 3:\nText: \"Genauere Fragen stellen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_Dm_M.csv",
+      "split": "test",
+      "total_samples": 234,
+      "samples_used": 234,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5726495726495726,
+      "qwk": 0.3521634989268049,
+      "mse": 0.7606837606837606,
+      "mae": 0.5384615384615384,
+      "confusion_matrix": [
+        [
+          98,
+          39,
+          25
+        ],
+        [
+          8,
+          28,
+          25
+        ],
+        [
+          1,
+          2,
+          8
+        ]
+      ],
+      "accuracy_class_0": 0.6049382716049383,
+      "accuracy_class_1": 0.45901639344262296,
+      "accuracy_class_2": 0.7272727272727273
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_183504__1_Dm_M__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_183504__1_Dm_M__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_183504__1_Dm_M__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_183504__1_Dm_M__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-27T22:22:00.745233",
+    "category": "1_Dm_M",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\1_Dm_M.csv",
+      "split": "test",
+      "total_samples": 234,
+      "samples_used": 234,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5555555555555556,
+      "qwk": 0.3376604362891026,
+      "mse": 0.49572649572649574,
+      "mae": 0.46153846153846156,
+      "confusion_matrix": [
+        [
+          89,
+          70,
+          3
+        ],
+        [
+          13,
+          39,
+          9
+        ],
+        [
+          1,
+          8,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.5493827160493827,
+      "accuracy_class_1": 0.639344262295082,
+      "accuracy_class_2": 0.18181818181818182
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_222200__1_Dm_M__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_222200__1_Dm_M__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_222200__1_Dm_M__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_222200__1_Dm_M__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-27T22:23:36.252866",
+    "category": "1_Dm_M",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\1_Dm_M.csv",
+      "split": "test",
+      "total_samples": 234,
+      "samples_used": 234,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6282051282051282,
+      "qwk": 0.4308387794211588,
+      "mse": 0.4230769230769231,
+      "mae": 0.3888888888888889,
+      "confusion_matrix": [
+        [
+          103,
+          56,
+          3
+        ],
+        [
+          11,
+          41,
+          9
+        ],
+        [
+          1,
+          7,
+          3
+        ]
+      ],
+      "accuracy_class_0": 0.6358024691358025,
+      "accuracy_class_1": 0.6721311475409836,
+      "accuracy_class_2": 0.2727272727272727
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_222336__1_Dm_M__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_222336__1_Dm_M__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_222336__1_Dm_M__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_222336__1_Dm_M__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T01:00:53.859722",
+    "category": "1_Dm_M",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\1_Dm_M.csv",
+      "split": "test",
+      "total_samples": 234,
+      "samples_used": 234,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5641025641025641,
+      "qwk": 0.3672594397076736,
+      "mse": 0.47435897435897434,
+      "mae": 0.44871794871794873,
+      "confusion_matrix": [
+        [
+          90,
+          70,
+          2
+        ],
+        [
+          11,
+          40,
+          10
+        ],
+        [
+          1,
+          8,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.5555555555555556,
+      "accuracy_class_1": 0.6557377049180327,
+      "accuracy_class_2": 0.18181818181818182
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_010053__1_Dm_M__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_010053__1_Dm_M__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_010053__1_Dm_M__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_010053__1_Dm_M__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T01:04:45.775529",
+    "category": "1_Dm_M",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\1_Dm_M.csv",
+      "split": "test",
+      "total_samples": 234,
+      "samples_used": 234,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6239316239316239,
+      "qwk": 0.38743455497382195,
+      "mse": 0.4658119658119658,
+      "mae": 0.405982905982906,
+      "confusion_matrix": [
+        [
+          103,
+          55,
+          4
+        ],
+        [
+          11,
+          40,
+          10
+        ],
+        [
+          3,
+          5,
+          3
+        ]
+      ],
+      "accuracy_class_0": 0.6358024691358025,
+      "accuracy_class_1": 0.6557377049180327,
+      "accuracy_class_2": 0.2727272727272727
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_010445__1_Dm_M__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_010445__1_Dm_M__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_010445__1_Dm_M__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_010445__1_Dm_M__exp_010"
+    }
+  }
+]

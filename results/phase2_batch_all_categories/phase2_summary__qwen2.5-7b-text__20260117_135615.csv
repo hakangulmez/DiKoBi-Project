@@ -1,0 +1,2 @@
+category,template_name,template_key,output_format,accuracy,qwk,mse,mae,samples_processed,samples_skipped,error
+1_D_M,zero_shot,zero_shot,text,0.8941908713692946,0.6555848063181647,0.11825726141078838,0.10995850622406639,482,0,

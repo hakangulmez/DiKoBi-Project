@@ -1,0 +1,478 @@
+[
+  {
+    "experiment_id": "exp_007",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-21T20:28:53.753612",
+    "category": "3_Dm_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "e7e1644e",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Fachsprache - Decision Making - Qualität\n\nDecision Making (Dm): Sprache an SuS anpassen (Unterrichtssprache statt Wissenschaftssprache).\n\nKodiert wird, ob die Antwort beschreibt, wie die Lehrkraft sprachlich verständlicher formulieren würde (z.B. Alltags-/Unterrichtssprache nutzen, Fachsprache übersetzen/erklären), damit SuS die Inhalte zugänglich verstehen.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur sprachlichen Angemessenheit\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „mehr Alltagssprache“ ohne konkrete Umsetzung\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Beispiele (Begriff erklären/übersetzen, passende Unterrichtssprache wählen)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Qual.csv",
+      "split": "test",
+      "total_samples": 223,
+      "samples_used": 223,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.42152466367713004,
+      "qwk": 0.047905764893919844,
+      "mse": 1.748878923766816,
+      "mae": 0.968609865470852,
+      "confusion_matrix": [
+        [
+          92,
+          32,
+          87
+        ],
+        [
+          2,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.43601895734597157,
+      "accuracy_class_1": 0.0,
+      "accuracy_class_2": 1.0
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260121_202853__3_Dm_Qual__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260121_202853__3_Dm_Qual__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260121_202853__3_Dm_Qual__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260121_202853__3_Dm_Qual__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-21T20:30:04.798722",
+    "category": "3_Dm_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "3951ad44",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Fachsprache - Decision Making - Qualität\n\nDecision Making (Dm): Sprache an SuS anpassen (Unterrichtssprache statt Wissenschaftssprache).\n\nKodiert wird, ob die Antwort beschreibt, wie die Lehrkraft sprachlich verständlicher formulieren würde (z.B. Alltags-/Unterrichtssprache nutzen, Fachsprache übersetzen/erklären), damit SuS die Inhalte zugänglich verstehen.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur sprachlichen Angemessenheit\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „mehr Alltagssprache“ ohne konkrete Umsetzung\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Beispiele (Begriff erklären/übersetzen, passende Unterrichtssprache wählen)\n\n\nExamples:\n\nExample 1:\nText: \"Mehrere SuS antworten lassen; bei niedrigen Klassenstufen auf schweres Fachvokabular verzichten\"\nRating: 2\n\nExample 2:\nText: \"Die Lehrkraft sollte mehr in Alltagssprache reden und weniger Fachbegriffe zum Erklären verwenden\"\nRating: 1\n\nExample 3:\nText: \"Lehrkraft macht ein Tafelbild welches die SuS abschreiben sollen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Qual.csv",
+      "split": "test",
+      "total_samples": 223,
+      "samples_used": 223,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.49327354260089684,
+      "qwk": 0.04982678914142935,
+      "mse": 1.5829596412556053,
+      "mae": 0.8654708520179372,
+      "confusion_matrix": [
+        [
+          106,
+          25,
+          80
+        ],
+        [
+          2,
+          2,
+          6
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.5023696682464455,
+      "accuracy_class_1": 0.2,
+      "accuracy_class_2": 1.0
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260121_203004__3_Dm_Qual__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260121_203004__3_Dm_Qual__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260121_203004__3_Dm_Qual__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260121_203004__3_Dm_Qual__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-21T20:59:25.937602",
+    "category": "3_Dm_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "4af2bd7a",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Fachsprache - Decision Making - Qualität\n\nDecision Making (Dm): Sprache an SuS anpassen (Unterrichtssprache statt Wissenschaftssprache).\n\nKodiert wird, ob die Antwort beschreibt, wie die Lehrkraft sprachlich verständlicher formulieren würde (z.B. Alltags-/Unterrichtssprache nutzen, Fachsprache übersetzen/erklären), damit SuS die Inhalte zugänglich verstehen.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur sprachlichen Angemessenheit\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „mehr Alltagssprache“ ohne konkrete Umsetzung\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Beispiele (Begriff erklären/übersetzen, passende Unterrichtssprache wählen)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Qual.csv",
+      "split": "test",
+      "total_samples": 223,
+      "samples_used": 223,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.3452914798206278,
+      "qwk": 0.0359711546683642,
+      "mse": 2.0403587443946187,
+      "mae": 1.116591928251121,
+      "confusion_matrix": [
+        [
+          72,
+          36,
+          103
+        ],
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.3412322274881517,
+      "accuracy_class_1": 0.3,
+      "accuracy_class_2": 1.0
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260121_205925__3_Dm_Qual__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260121_205925__3_Dm_Qual__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260121_205925__3_Dm_Qual__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260121_205925__3_Dm_Qual__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-21T21:02:38.293911",
+    "category": "3_Dm_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "5126b091",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Fachsprache - Decision Making - Qualität\n\nDecision Making (Dm): Sprache an SuS anpassen (Unterrichtssprache statt Wissenschaftssprache).\n\nKodiert wird, ob die Antwort beschreibt, wie die Lehrkraft sprachlich verständlicher formulieren würde (z.B. Alltags-/Unterrichtssprache nutzen, Fachsprache übersetzen/erklären), damit SuS die Inhalte zugänglich verstehen.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur sprachlichen Angemessenheit\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „mehr Alltagssprache“ ohne konkrete Umsetzung\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Beispiele (Begriff erklären/übersetzen, passende Unterrichtssprache wählen)\n\n\nExamples:\n\nExample 1:\nText: \"Mehrere SuS antworten lassen; bei niedrigen Klassenstufen auf schweres Fachvokabular verzichten\"\nRating: 2\n\nExample 2:\nText: \"Die Lehrkraft sollte mehr in Alltagssprache reden und weniger Fachbegriffe zum Erklären verwenden\"\nRating: 1\n\nExample 3:\nText: \"Lehrkraft macht ein Tafelbild welches die SuS abschreiben sollen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Qual.csv",
+      "split": "test",
+      "total_samples": 223,
+      "samples_used": 223,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.4484304932735426,
+      "qwk": 0.042607168412151064,
+      "mse": 1.7757847533632287,
+      "mae": 0.9596412556053812,
+      "confusion_matrix": [
+        [
+          95,
+          25,
+          91
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.45023696682464454,
+      "accuracy_class_1": 0.3,
+      "accuracy_class_2": 1.0
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260121_210238__3_Dm_Qual__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260121_210238__3_Dm_Qual__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260121_210238__3_Dm_Qual__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260121_210238__3_Dm_Qual__exp_010"
+    }
+  },
+  {
+    "experiment_id": "exp_011",
+    "version": "exp_011",
+    "timestamp": "2026-01-27T23:24:33.983046",
+    "category": "3_Dm_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Qual.csv",
+      "split": "test",
+      "total_samples": 223,
+      "samples_used": 223,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.3991031390134529,
+      "qwk": 0.044975005595762174,
+      "mse": 1.2869955156950672,
+      "mae": 0.8295964125560538,
+      "confusion_matrix": [
+        [
+          83,
+          77,
+          51
+        ],
+        [
+          1,
+          5,
+          4
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.3933649289099526,
+      "accuracy_class_1": 0.5,
+      "accuracy_class_2": 0.5
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_232433__3_Dm_Qual__exp_011\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_232433__3_Dm_Qual__exp_011\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_232433__3_Dm_Qual__exp_011\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_232433__3_Dm_Qual__exp_011"
+    }
+  },
+  {
+    "experiment_id": "exp_012",
+    "version": "exp_012",
+    "timestamp": "2026-01-27T23:26:02.436520",
+    "category": "3_Dm_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Qual.csv",
+      "split": "test",
+      "total_samples": 223,
+      "samples_used": 223,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.4304932735426009,
+      "qwk": 0.04344899494502885,
+      "mse": 1.4573991031390134,
+      "mae": 0.8654708520179372,
+      "confusion_matrix": [
+        [
+          93,
+          52,
+          66
+        ],
+        [
+          2,
+          2,
+          6
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.44075829383886256,
+      "accuracy_class_1": 0.2,
+      "accuracy_class_2": 0.5
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_232602__3_Dm_Qual__exp_012\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_232602__3_Dm_Qual__exp_012\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_232602__3_Dm_Qual__exp_012\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_232602__3_Dm_Qual__exp_012"
+    }
+  },
+  {
+    "experiment_id": "exp_013",
+    "version": "exp_013",
+    "timestamp": "2026-01-28T02:57:19.860478",
+    "category": "3_Dm_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Qual.csv",
+      "split": "test",
+      "total_samples": 223,
+      "samples_used": 223,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.40358744394618834,
+      "qwk": 0.04073629330131168,
+      "mse": 1.2690582959641257,
+      "mae": 0.820627802690583,
+      "confusion_matrix": [
+        [
+          85,
+          76,
+          50
+        ],
+        [
+          2,
+          4,
+          4
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.4028436018957346,
+      "accuracy_class_1": 0.4,
+      "accuracy_class_2": 0.5
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_025719__3_Dm_Qual__exp_013\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_025719__3_Dm_Qual__exp_013\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_025719__3_Dm_Qual__exp_013\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_025719__3_Dm_Qual__exp_013"
+    }
+  },
+  {
+    "experiment_id": "exp_014",
+    "version": "exp_014",
+    "timestamp": "2026-01-28T03:01:00.111069",
+    "category": "3_Dm_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_Dm_Qual.csv",
+      "split": "test",
+      "total_samples": 223,
+      "samples_used": 223,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.42152466367713004,
+      "qwk": 0.04513826940231924,
+      "mse": 1.506726457399103,
+      "mae": 0.8878923766816144,
+      "confusion_matrix": [
+        [
+          90,
+          52,
+          69
+        ],
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.4265402843601896,
+      "accuracy_class_1": 0.3,
+      "accuracy_class_2": 0.5
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_030100__3_Dm_Qual__exp_014\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_030100__3_Dm_Qual__exp_014\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_030100__3_Dm_Qual__exp_014\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_030100__3_Dm_Qual__exp_014"
+    }
+  }
+]

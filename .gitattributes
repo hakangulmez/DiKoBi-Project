@@ -1,0 +1,2 @@
+# Jupyter Notebooks - strip outputs and execution counts before committing
+*.ipynb filter=nbstripout diff=ipynb

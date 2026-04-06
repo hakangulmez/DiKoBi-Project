@@ -1,0 +1,580 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T11:35:01.180425",
+    "category": "4_Dm_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Experimente - Beschreiben/Merken - Erkenntnisgewinnung/Prozesse. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Experimente - Beschreiben/Merken - Erkenntnisgewinnung/Prozesse\n\nDecision Making (Dm): Handlungsalternative zur Förderung des Erkenntnisprozesses beim Experimentieren.\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage -> Hypothese -> Planung/Durchführung -> Datenanalyse/Interpretation).\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage → Hypothese → Planung/Durchführung → Datenanalyse/Interpretation).\n\nKeine Kodierung: reine Aussagen zur Experimentart (Schülerexperiment vs. Lehrerexperiment) ohne Bezug zu Erkenntnisschritten.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage ODER ohne Bezug zum Erkenntnisprozess\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative/Schritt genannt, wenig konkret\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Schritte/konkrete Beispiele; erläutert, wie die Alternative das Kritisierte verbessert\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_Dm_Ep.csv",
+      "split": "test",
+      "total_samples": 218,
+      "samples_used": 218,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6238532110091743,
+      "qwk": 0.5355575439942051,
+      "mse": 0.45871559633027525,
+      "mae": 0.4036697247706422,
+      "confusion_matrix": [
+        [
+          72,
+          45,
+          6
+        ],
+        [
+          7,
+          51,
+          13
+        ],
+        [
+          0,
+          11,
+          13
+        ]
+      ],
+      "accuracy_class_0": 0.5853658536585366,
+      "accuracy_class_1": 0.7183098591549296,
+      "accuracy_class_2": 0.5416666666666666
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_113501__4_Dm_Ep__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_113501__4_Dm_Ep__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_113501__4_Dm_Ep__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_113501__4_Dm_Ep__exp_001"
+    },
+    "prompt_hash": "da87f865"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:35:49.447527",
+    "category": "4_Dm_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Experimente - Beschreiben/Merken - Erkenntnisgewinnung/Prozesse. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Experimente - Beschreiben/Merken - Erkenntnisgewinnung/Prozesse\n\nDecision Making (Dm): Handlungsalternative zur Förderung des Erkenntnisprozesses beim Experimentieren.\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage -> Hypothese -> Planung/Durchführung -> Datenanalyse/Interpretation).\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage → Hypothese → Planung/Durchführung → Datenanalyse/Interpretation).\n\nKeine Kodierung: reine Aussagen zur Experimentart (Schülerexperiment vs. Lehrerexperiment) ohne Bezug zu Erkenntnisschritten.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage ODER ohne Bezug zum Erkenntnisprozess\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative/Schritt genannt, wenig konkret\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Schritte/konkrete Beispiele; erläutert, wie die Alternative das Kritisierte verbessert\n\n\nExamples:\n\nExample 1:\nText: \"Experiment mit dem naturwissenschaftlichen Weg der Erkenntnisgewinnung: 1. Frage formulieren 2. Hypothese generieren 3. Untersuchungen planen 4. Daten analysieren\"\nRating: 2\n\nExample 2:\nText: \"SuS alle experimentieren lassen und davor sollen sie Vermutungen über das Experiment aufstellen\"\nRating: 1\n\nExample 3:\nText: \"Schulranzen wegräumen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_Dm_Ep.csv",
+      "split": "test",
+      "total_samples": 218,
+      "samples_used": 218,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6422018348623854,
+      "qwk": 0.5680138711142303,
+      "mse": 0.44036697247706424,
+      "mae": 0.3853211009174312,
+      "confusion_matrix": [
+        [
+          80,
+          37,
+          6
+        ],
+        [
+          12,
+          45,
+          14
+        ],
+        [
+          0,
+          9,
+          15
+        ]
+      ],
+      "accuracy_class_0": 0.6504065040650406,
+      "accuracy_class_1": 0.6338028169014085,
+      "accuracy_class_2": 0.625
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_113549__4_Dm_Ep__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_113549__4_Dm_Ep__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_113549__4_Dm_Ep__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_113549__4_Dm_Ep__exp_002"
+    },
+    "prompt_hash": "a4aedbba"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T19:28:38.955588",
+    "category": "4_Dm_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "f235d929",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Experimente - Beschreiben/Merken - Erkenntnisgewinnung/Prozesse\n\nDecision Making (Dm): Handlungsalternative zur Förderung des Erkenntnisprozesses beim Experimentieren.\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage -> Hypothese -> Planung/Durchführung -> Datenanalyse/Interpretation).\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage → Hypothese → Planung/Durchführung → Datenanalyse/Interpretation).\n\nKeine Kodierung: reine Aussagen zur Experimentart (Schülerexperiment vs. Lehrerexperiment) ohne Bezug zu Erkenntnisschritten.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage ODER ohne Bezug zum Erkenntnisprozess\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative/Schritt genannt, wenig konkret\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Schritte/konkrete Beispiele; erläutert, wie die Alternative das Kritisierte verbessert\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_Dm_Ep.csv",
+      "split": "test",
+      "total_samples": 218,
+      "samples_used": 218,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6146788990825688,
+      "qwk": 0.5577495266432242,
+      "mse": 0.481651376146789,
+      "mae": 0.41743119266055045,
+      "confusion_matrix": [
+        [
+          89,
+          29,
+          5
+        ],
+        [
+          21,
+          29,
+          21
+        ],
+        [
+          2,
+          6,
+          16
+        ]
+      ],
+      "accuracy_class_0": 0.7235772357723578,
+      "accuracy_class_1": 0.4084507042253521,
+      "accuracy_class_2": 0.6666666666666666
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_192838__4_Dm_Ep__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_192838__4_Dm_Ep__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_192838__4_Dm_Ep__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_192838__4_Dm_Ep__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T19:29:51.204307",
+    "category": "4_Dm_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "9e13ce51",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Experimente - Beschreiben/Merken - Erkenntnisgewinnung/Prozesse\n\nDecision Making (Dm): Handlungsalternative zur Förderung des Erkenntnisprozesses beim Experimentieren.\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage -> Hypothese -> Planung/Durchführung -> Datenanalyse/Interpretation).\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage → Hypothese → Planung/Durchführung → Datenanalyse/Interpretation).\n\nKeine Kodierung: reine Aussagen zur Experimentart (Schülerexperiment vs. Lehrerexperiment) ohne Bezug zu Erkenntnisschritten.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage ODER ohne Bezug zum Erkenntnisprozess\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative/Schritt genannt, wenig konkret\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Schritte/konkrete Beispiele; erläutert, wie die Alternative das Kritisierte verbessert\n\n\nExamples:\n\nExample 1:\nText: \"Experiment mit dem naturwissenschaftlichen Weg der Erkenntnisgewinnung: 1. Frage formulieren 2. Hypothese generieren 3. Untersuchungen planen 4. Daten analysieren\"\nRating: 2\n\nExample 2:\nText: \"SuS alle experimentieren lassen und davor sollen sie Vermutungen über das Experiment aufstellen\"\nRating: 1\n\nExample 3:\nText: \"Schulranzen wegräumen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_Dm_Ep.csv",
+      "split": "test",
+      "total_samples": 218,
+      "samples_used": 218,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6651376146788991,
+      "qwk": 0.5941769983990469,
+      "mse": 0.45871559633027525,
+      "mae": 0.3761467889908257,
+      "confusion_matrix": [
+        [
+          90,
+          25,
+          8
+        ],
+        [
+          15,
+          36,
+          20
+        ],
+        [
+          1,
+          4,
+          19
+        ]
+      ],
+      "accuracy_class_0": 0.7317073170731707,
+      "accuracy_class_1": 0.5070422535211268,
+      "accuracy_class_2": 0.7916666666666666
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_192951__4_Dm_Ep__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_192951__4_Dm_Ep__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_192951__4_Dm_Ep__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_192951__4_Dm_Ep__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T23:36:18.875905",
+    "category": "4_Dm_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "917137ce",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Experimente - Beschreiben/Merken - Erkenntnisgewinnung/Prozesse\n\nDecision Making (Dm): Handlungsalternative zur Förderung des Erkenntnisprozesses beim Experimentieren.\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage -> Hypothese -> Planung/Durchführung -> Datenanalyse/Interpretation).\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage → Hypothese → Planung/Durchführung → Datenanalyse/Interpretation).\n\nKeine Kodierung: reine Aussagen zur Experimentart (Schülerexperiment vs. Lehrerexperiment) ohne Bezug zu Erkenntnisschritten.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage ODER ohne Bezug zum Erkenntnisprozess\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative/Schritt genannt, wenig konkret\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Schritte/konkrete Beispiele; erläutert, wie die Alternative das Kritisierte verbessert\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_Dm_Ep.csv",
+      "split": "test",
+      "total_samples": 218,
+      "samples_used": 218,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6467889908256881,
+      "qwk": 0.5597699635629307,
+      "mse": 0.42201834862385323,
+      "mae": 0.3761467889908257,
+      "confusion_matrix": [
+        [
+          90,
+          29,
+          4
+        ],
+        [
+          23,
+          38,
+          10
+        ],
+        [
+          1,
+          10,
+          13
+        ]
+      ],
+      "accuracy_class_0": 0.7317073170731707,
+      "accuracy_class_1": 0.5352112676056338,
+      "accuracy_class_2": 0.5416666666666666
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_233618__4_Dm_Ep__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_233618__4_Dm_Ep__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_233618__4_Dm_Ep__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_233618__4_Dm_Ep__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T23:39:33.412058",
+    "category": "4_Dm_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "7e0c747f",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Experimente - Beschreiben/Merken - Erkenntnisgewinnung/Prozesse\n\nDecision Making (Dm): Handlungsalternative zur Förderung des Erkenntnisprozesses beim Experimentieren.\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage -> Hypothese -> Planung/Durchführung -> Datenanalyse/Interpretation).\n\nKodiert wird, ob die Antwort Vorschläge macht, bei denen SuS einzelne Erkenntnisschritte selbst vollziehen (z.B. Frage → Hypothese → Planung/Durchführung → Datenanalyse/Interpretation).\n\nKeine Kodierung: reine Aussagen zur Experimentart (Schülerexperiment vs. Lehrerexperiment) ohne Bezug zu Erkenntnisschritten.\n\nRating Scale:\n0: trifft nicht zu\n- keine Decision-Making-Aussage ODER ohne Bezug zum Erkenntnisprozess\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- einzelne Alternative/Schritt genannt, wenig konkret\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- mehrere Schritte/konkrete Beispiele; erläutert, wie die Alternative das Kritisierte verbessert\n\n\nExamples:\n\nExample 1:\nText: \"Experiment mit dem naturwissenschaftlichen Weg der Erkenntnisgewinnung: 1. Frage formulieren 2. Hypothese generieren 3. Untersuchungen planen 4. Daten analysieren\"\nRating: 2\n\nExample 2:\nText: \"SuS alle experimentieren lassen und davor sollen sie Vermutungen über das Experiment aufstellen\"\nRating: 1\n\nExample 3:\nText: \"Schulranzen wegräumen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_Dm_Ep.csv",
+      "split": "test",
+      "total_samples": 218,
+      "samples_used": 218,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6513761467889908,
+      "qwk": 0.598567323647254,
+      "mse": 0.41743119266055045,
+      "mae": 0.37155963302752293,
+      "confusion_matrix": [
+        [
+          84,
+          34,
+          5
+        ],
+        [
+          15,
+          41,
+          15
+        ],
+        [
+          0,
+          7,
+          17
+        ]
+      ],
+      "accuracy_class_0": 0.6829268292682927,
+      "accuracy_class_1": 0.5774647887323944,
+      "accuracy_class_2": 0.7083333333333334
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_233933__4_Dm_Ep__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_233933__4_Dm_Ep__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_233933__4_Dm_Ep__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_233933__4_Dm_Ep__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-27T23:44:56.470873",
+    "category": "4_Dm_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_Dm_Ep.csv",
+      "split": "test",
+      "total_samples": 218,
+      "samples_used": 218,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6880733944954128,
+      "qwk": 0.612528222126147,
+      "mse": 0.3394495412844037,
+      "mae": 0.3211009174311927,
+      "confusion_matrix": [
+        [
+          90,
+          32,
+          1
+        ],
+        [
+          14,
+          50,
+          7
+        ],
+        [
+          1,
+          13,
+          10
+        ]
+      ],
+      "accuracy_class_0": 0.7317073170731707,
+      "accuracy_class_1": 0.704225352112676,
+      "accuracy_class_2": 0.4166666666666667
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_234456__4_Dm_Ep__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_234456__4_Dm_Ep__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_234456__4_Dm_Ep__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_234456__4_Dm_Ep__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-27T23:46:21.585821",
+    "category": "4_Dm_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_Dm_Ep.csv",
+      "split": "test",
+      "total_samples": 218,
+      "samples_used": 218,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7293577981651376,
+      "qwk": 0.682152918499481,
+      "mse": 0.2706422018348624,
+      "mae": 0.2706422018348624,
+      "confusion_matrix": [
+        [
+          95,
+          28,
+          0
+        ],
+        [
+          14,
+          53,
+          4
+        ],
+        [
+          0,
+          13,
+          11
+        ]
+      ],
+      "accuracy_class_0": 0.7723577235772358,
+      "accuracy_class_1": 0.7464788732394366,
+      "accuracy_class_2": 0.4583333333333333
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_234621__4_Dm_Ep__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_234621__4_Dm_Ep__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_234621__4_Dm_Ep__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_234621__4_Dm_Ep__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T03:49:50.718571",
+    "category": "4_Dm_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_Dm_Ep.csv",
+      "split": "test",
+      "total_samples": 218,
+      "samples_used": 218,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6834862385321101,
+      "qwk": 0.5760791280549287,
+      "mse": 0.37155963302752293,
+      "mae": 0.3348623853211009,
+      "confusion_matrix": [
+        [
+          88,
+          33,
+          2
+        ],
+        [
+          16,
+          50,
+          5
+        ],
+        [
+          2,
+          11,
+          11
+        ]
+      ],
+      "accuracy_class_0": 0.7154471544715447,
+      "accuracy_class_1": 0.704225352112676,
+      "accuracy_class_2": 0.4583333333333333
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_034950__4_Dm_Ep__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_034950__4_Dm_Ep__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_034950__4_Dm_Ep__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_034950__4_Dm_Ep__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T03:53:25.948747",
+    "category": "4_Dm_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_Dm_Ep.csv",
+      "split": "test",
+      "total_samples": 218,
+      "samples_used": 218,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7293577981651376,
+      "qwk": 0.685233224022319,
+      "mse": 0.2706422018348624,
+      "mae": 0.2706422018348624,
+      "confusion_matrix": [
+        [
+          95,
+          28,
+          0
+        ],
+        [
+          13,
+          53,
+          5
+        ],
+        [
+          0,
+          13,
+          11
+        ]
+      ],
+      "accuracy_class_0": 0.7723577235772358,
+      "accuracy_class_1": 0.7464788732394366,
+      "accuracy_class_2": 0.4583333333333333
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_035325__4_Dm_Ep__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_035325__4_Dm_Ep__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_035325__4_Dm_Ep__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_035325__4_Dm_Ep__exp_010"
+    }
+  }
+]

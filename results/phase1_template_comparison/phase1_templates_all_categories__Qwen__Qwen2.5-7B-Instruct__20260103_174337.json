@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "timestamp": "20260103_174337",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "use_8bit": true,
+    "max_samples": null,
+    "num_categories": 26,
+    "templates": {
+      "zero_shot": "zero_shot",
+      "few_shot": "few_shot"
+    }
+  },
+  "categories": {
+    "1_D_M": {
+      "test_data_path": "data\\processed\\test\\1_D_M.csv",
+      "num_rows": 482,
+      "templates": {
+        "zero_shot": {
+          "prompt_template": "zero_shot",
+          "metrics": {
+            "accuracy": 0.8174273858921162,
+            "qwk": 0.5018033075299084,
+            "mse": 0.1950207468879668,
+            "mae": 0.18672199170124482,
+            "confusion_matrix": 

@@ -1,0 +1,580 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T11:07:51.476243",
+    "category": "3_D_F",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Fachsprache - Beschreiben - Fachsprache. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Fachsprache - Beschreiben - Fachsprache\n\nBeschreiben (Description): Fehlende Erklärung/Einbettung von Fachbegriffen (Funktion/Definition/Verknüpfung).\n\nKodiert wird, ob die Antwort beschreibt, dass Fachbegriffe genannt/verwendet werden, ohne dass sie definiert, erklärt oder funktional in einen Kontext eingeordnet werden (z.B. Hornschicht, Lederhaut, Unterhaut).\n\nHinweis: Diese Kategorie zielt auf die fehlende Erklärung/Verknüpfung ab (nicht primär auf Menge oder Schwierigkeit der Sprache).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur fehlenden Erklärung/Verknüpfung von Fachbegriffen\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- eher vage (z.B. „Fachbegriffe erklären“) ohne Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: welche Begriffe/Funktionen fehlen, wie zeigt sich das im Unterricht (sichtbar im Video)\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_F.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8858267716535433,
+      "qwk": 0.3215045823741476,
+      "mse": 0.16141732283464566,
+      "mae": 0.12992125984251968,
+      "confusion_matrix": [
+        [
+          662,
+          48,
+          3
+        ],
+        [
+          20,
+          10,
+          1
+        ],
+        [
+          9,
+          6,
+          3
+        ]
+      ],
+      "accuracy_class_0": 0.9284712482468443,
+      "accuracy_class_1": 0.3225806451612903,
+      "accuracy_class_2": 0.16666666666666666
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_110751__3_D_F__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_110751__3_D_F__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_110751__3_D_F__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_110751__3_D_F__exp_001"
+    },
+    "prompt_hash": "9974e070"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:10:23.791576",
+    "category": "3_D_F",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Fachsprache - Beschreiben - Fachsprache. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Fachsprache - Beschreiben - Fachsprache\n\nBeschreiben (Description): Fehlende Erklärung/Einbettung von Fachbegriffen (Funktion/Definition/Verknüpfung).\n\nKodiert wird, ob die Antwort beschreibt, dass Fachbegriffe genannt/verwendet werden, ohne dass sie definiert, erklärt oder funktional in einen Kontext eingeordnet werden (z.B. Hornschicht, Lederhaut, Unterhaut).\n\nHinweis: Diese Kategorie zielt auf die fehlende Erklärung/Verknüpfung ab (nicht primär auf Menge oder Schwierigkeit der Sprache).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur fehlenden Erklärung/Verknüpfung von Fachbegriffen\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- eher vage (z.B. „Fachbegriffe erklären“) ohne Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: welche Begriffe/Funktionen fehlen, wie zeigt sich das im Unterricht (sichtbar im Video)\n\n\nExamples:\n\nExample 1:\nText: \"Fachbegriffe werden nicht erklärt\"\nRating: 2\n\nExample 2:\nText: \"keine Klärung der Fachbegriffe\"\nRating: 1\n\nExample 3:\nText: \"Overhead-Projektor\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_F.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8832020997375328,
+      "qwk": 0.3273126936624381,
+      "mse": 0.26246719160104987,
+      "mae": 0.16535433070866143,
+      "confusion_matrix": [
+        [
+          657,
+          27,
+          29
+        ],
+        [
+          12,
+          10,
+          9
+        ],
+        [
+          8,
+          4,
+          6
+        ]
+      ],
+      "accuracy_class_0": 0.9214586255259467,
+      "accuracy_class_1": 0.3225806451612903,
+      "accuracy_class_2": 0.3333333333333333
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_111023__3_D_F__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_111023__3_D_F__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_111023__3_D_F__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_111023__3_D_F__exp_002"
+    },
+    "prompt_hash": "03b5ae87"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T17:56:06.144928",
+    "category": "3_D_F",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "c2528cfe",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Fachsprache - Beschreiben - Fachsprache\n\nBeschreiben (Description): Fehlende Erklärung/Einbettung von Fachbegriffen (Funktion/Definition/Verknüpfung).\n\nKodiert wird, ob die Antwort beschreibt, dass Fachbegriffe genannt/verwendet werden, ohne dass sie definiert, erklärt oder funktional in einen Kontext eingeordnet werden (z.B. Hornschicht, Lederhaut, Unterhaut).\n\nHinweis: Diese Kategorie zielt auf die fehlende Erklärung/Verknüpfung ab (nicht primär auf Menge oder Schwierigkeit der Sprache).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur fehlenden Erklärung/Verknüpfung von Fachbegriffen\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- eher vage (z.B. „Fachbegriffe erklären“) ohne Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: welche Begriffe/Funktionen fehlen, wie zeigt sich das im Unterricht (sichtbar im Video)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_F.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.916010498687664,
+      "qwk": 0.423744194736561,
+      "mse": 0.1115485564304462,
+      "mae": 0.09317585301837271,
+      "confusion_matrix": [
+        [
+          684,
+          29,
+          0
+        ],
+        [
+          17,
+          14,
+          0
+        ],
+        [
+          7,
+          11,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.9593267882187938,
+      "accuracy_class_1": 0.45161290322580644,
+      "accuracy_class_2": 0.0
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_175606__3_D_F__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_175606__3_D_F__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_175606__3_D_F__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_175606__3_D_F__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T18:07:00.130650",
+    "category": "3_D_F",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "d0ed71cc",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Fachsprache - Beschreiben - Fachsprache\n\nBeschreiben (Description): Fehlende Erklärung/Einbettung von Fachbegriffen (Funktion/Definition/Verknüpfung).\n\nKodiert wird, ob die Antwort beschreibt, dass Fachbegriffe genannt/verwendet werden, ohne dass sie definiert, erklärt oder funktional in einen Kontext eingeordnet werden (z.B. Hornschicht, Lederhaut, Unterhaut).\n\nHinweis: Diese Kategorie zielt auf die fehlende Erklärung/Verknüpfung ab (nicht primär auf Menge oder Schwierigkeit der Sprache).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur fehlenden Erklärung/Verknüpfung von Fachbegriffen\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- eher vage (z.B. „Fachbegriffe erklären“) ohne Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: welche Begriffe/Funktionen fehlen, wie zeigt sich das im Unterricht (sichtbar im Video)\n\n\nExamples:\n\nExample 1:\nText: \"Fachbegriffe werden nicht erklärt\"\nRating: 2\n\nExample 2:\nText: \"keine Klärung der Fachbegriffe\"\nRating: 1\n\nExample 3:\nText: \"Overhead-Projektor\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_F.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.905511811023622,
+      "qwk": 0.431141130465695,
+      "mse": 0.1377952755905512,
+      "mae": 0.1089238845144357,
+      "confusion_matrix": [
+        [
+          669,
+          41,
+          3
+        ],
+        [
+          10,
+          19,
+          2
+        ],
+        [
+          8,
+          8,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.938288920056101,
+      "accuracy_class_1": 0.6129032258064516,
+      "accuracy_class_2": 0.1111111111111111
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_180700__3_D_F__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_180700__3_D_F__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_180700__3_D_F__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_180700__3_D_F__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T18:46:40.562099",
+    "category": "3_D_F",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "da7ef1d9",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Fachsprache - Beschreiben - Fachsprache\n\nBeschreiben (Description): Fehlende Erklärung/Einbettung von Fachbegriffen (Funktion/Definition/Verknüpfung).\n\nKodiert wird, ob die Antwort beschreibt, dass Fachbegriffe genannt/verwendet werden, ohne dass sie definiert, erklärt oder funktional in einen Kontext eingeordnet werden (z.B. Hornschicht, Lederhaut, Unterhaut).\n\nHinweis: Diese Kategorie zielt auf die fehlende Erklärung/Verknüpfung ab (nicht primär auf Menge oder Schwierigkeit der Sprache).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur fehlenden Erklärung/Verknüpfung von Fachbegriffen\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- eher vage (z.B. „Fachbegriffe erklären“) ohne Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: welche Begriffe/Funktionen fehlen, wie zeigt sich das im Unterricht (sichtbar im Video)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_F.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.9304461942257218,
+      "qwk": 0.4355660080368883,
+      "mse": 0.10498687664041995,
+      "mae": 0.08136482939632546,
+      "confusion_matrix": [
+        [
+          692,
+          21,
+          0
+        ],
+        [
+          14,
+          17,
+          0
+        ],
+        [
+          9,
+          9,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.97054698457223,
+      "accuracy_class_1": 0.5483870967741935,
+      "accuracy_class_2": 0.0
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_184640__3_D_F__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_184640__3_D_F__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_184640__3_D_F__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_184640__3_D_F__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T18:50:43.217228",
+    "category": "3_D_F",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "c6a64d42",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Fachsprache - Beschreiben - Fachsprache\n\nBeschreiben (Description): Fehlende Erklärung/Einbettung von Fachbegriffen (Funktion/Definition/Verknüpfung).\n\nKodiert wird, ob die Antwort beschreibt, dass Fachbegriffe genannt/verwendet werden, ohne dass sie definiert, erklärt oder funktional in einen Kontext eingeordnet werden (z.B. Hornschicht, Lederhaut, Unterhaut).\n\nHinweis: Diese Kategorie zielt auf die fehlende Erklärung/Verknüpfung ab (nicht primär auf Menge oder Schwierigkeit der Sprache).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur fehlenden Erklärung/Verknüpfung von Fachbegriffen\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- eher vage (z.B. „Fachbegriffe erklären“) ohne Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: welche Begriffe/Funktionen fehlen, wie zeigt sich das im Unterricht (sichtbar im Video)\n\n\nExamples:\n\nExample 1:\nText: \"Fachbegriffe werden nicht erklärt\"\nRating: 2\n\nExample 2:\nText: \"keine Klärung der Fachbegriffe\"\nRating: 1\n\nExample 3:\nText: \"Overhead-Projektor\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_F.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8976377952755905,
+      "qwk": 0.4477527207720833,
+      "mse": 0.15748031496062992,
+      "mae": 0.12073490813648294,
+      "confusion_matrix": [
+        [
+          665,
+          42,
+          6
+        ],
+        [
+          12,
+          13,
+          6
+        ],
+        [
+          8,
+          4,
+          6
+        ]
+      ],
+      "accuracy_class_0": 0.9326788218793829,
+      "accuracy_class_1": 0.41935483870967744,
+      "accuracy_class_2": 0.3333333333333333
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_185043__3_D_F__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_185043__3_D_F__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_185043__3_D_F__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_185043__3_D_F__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-27T22:55:18.048633",
+    "category": "3_D_F",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_F.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8976377952755905,
+      "qwk": 0.4055528144127807,
+      "mse": 0.15354330708661418,
+      "mae": 0.1194225721784777,
+      "confusion_matrix": [
+        [
+          661,
+          47,
+          5
+        ],
+        [
+          10,
+          20,
+          1
+        ],
+        [
+          8,
+          7,
+          3
+        ]
+      ],
+      "accuracy_class_0": 0.9270687237026648,
+      "accuracy_class_1": 0.6451612903225806,
+      "accuracy_class_2": 0.16666666666666666
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_225518__3_D_F__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_225518__3_D_F__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_225518__3_D_F__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_225518__3_D_F__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-27T22:59:39.114400",
+    "category": "3_D_F",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_F.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.916010498687664,
+      "qwk": 0.44171186005408103,
+      "mse": 0.1272965879265092,
+      "mae": 0.0984251968503937,
+      "confusion_matrix": [
+        [
+          685,
+          25,
+          3
+        ],
+        [
+          14,
+          12,
+          5
+        ],
+        [
+          8,
+          9,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.9607293127629734,
+      "accuracy_class_1": 0.3870967741935484,
+      "accuracy_class_2": 0.05555555555555555
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_225939__3_D_F__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_225939__3_D_F__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_225939__3_D_F__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_225939__3_D_F__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T01:39:36.869311",
+    "category": "3_D_F",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_F.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8976377952755905,
+      "qwk": 0.41432508413078706,
+      "mse": 0.14566929133858267,
+      "mae": 0.1167979002624672,
+      "confusion_matrix": [
+        [
+          664,
+          45,
+          4
+        ],
+        [
+          10,
+          19,
+          2
+        ],
+        [
+          7,
+          10,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.9312762973352033,
+      "accuracy_class_1": 0.6129032258064516,
+      "accuracy_class_2": 0.05555555555555555
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_013936__3_D_F__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_013936__3_D_F__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_013936__3_D_F__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_013936__3_D_F__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T01:51:35.610200",
+    "category": "3_D_F",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_F.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.9225721784776902,
+      "qwk": 0.4360304772589165,
+      "mse": 0.12467191601049869,
+      "mae": 0.09317585301837271,
+      "confusion_matrix": [
+        [
+          687,
+          23,
+          3
+        ],
+        [
+          14,
+          14,
+          3
+        ],
+        [
+          9,
+          7,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.9635343618513323,
+      "accuracy_class_1": 0.45161290322580644,
+      "accuracy_class_2": 0.1111111111111111
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_015135__3_D_F__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_015135__3_D_F__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_015135__3_D_F__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_015135__3_D_F__exp_010"
+    }
+  }
+]

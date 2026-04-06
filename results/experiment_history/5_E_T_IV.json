@@ -1,0 +1,680 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T11:46:37.496887",
+    "category": "5_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Modelle - Einschätzen - Tiefe/Inhaltliche Vielfalt. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2, 3. Do NOT add explanation or extra text.\n\nCategory: Modelle - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen bei der Arbeit mit Modellen.\n\nKodiert wird, ob die Antwort einen Theoriebezug herstellt, z.B.:\n- Zweck/Einführung von Modellen (Modellbildung)\n- Niveaustufen der Modellarbeit (z.B. Veranschaulichung vs. Erklären von Zusammenhängen vs. Hypothesen/Voraussagen)\n- Modellkritik (Entsprechungen, Grenzen, Beiwerk) zur Vermeidung von Fehlvorstellungen\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Modellkritik, Fehlvorstellungen, Zweck von Modellen\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und mit Zweck/Notwendigkeit begründet\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 279,
+      "samples_used": 279,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5913978494623656,
+      "qwk": 0.3792677232400362,
+      "mse": 0.5806451612903226,
+      "mae": 0.4659498207885305,
+      "confusion_matrix": [
+        [
+          146,
+          71,
+          13,
+          0
+        ],
+        [
+          7,
+          11,
+          16,
+          0
+        ],
+        [
+          3,
+          3,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.6347826086956522,
+      "accuracy_class_1": 0.3235294117647059,
+      "accuracy_class_2": 0.5714285714285714,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_114637__5_E_T_IV__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_114637__5_E_T_IV__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_114637__5_E_T_IV__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_114637__5_E_T_IV__exp_001"
+    },
+    "prompt_hash": "9601598c"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:47:35.340088",
+    "category": "5_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Modelle - Einschätzen - Tiefe/Inhaltliche Vielfalt. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2, 3. Do NOT add explanation or extra text.\n\nCategory: Modelle - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen bei der Arbeit mit Modellen.\n\nKodiert wird, ob die Antwort einen Theoriebezug herstellt, z.B.:\n- Zweck/Einführung von Modellen (Modellbildung)\n- Niveaustufen der Modellarbeit (z.B. Veranschaulichung vs. Erklären von Zusammenhängen vs. Hypothesen/Voraussagen)\n- Modellkritik (Entsprechungen, Grenzen, Beiwerk) zur Vermeidung von Fehlvorstellungen\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Modellkritik, Fehlvorstellungen, Zweck von Modellen\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und mit Zweck/Notwendigkeit begründet\n\n\nExamples:\n\nExample 1:\nText: \"Modelle dienen als Denk- und Arbeitsweise zur Erkenntnisgewinnung; hier dient es nur als Anschauungsobjekt.\"\nRating: 3\n\nExample 2:\nText: \"Modellkritik ist zentraler Aspekt; ohne Modellkritik können Fehlvorstellungen entstehen.\"\nRating: 2\n\nExample 3:\nText: \"Modell ist ziemlich klein\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 279,
+      "samples_used": 279,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7885304659498208,
+      "qwk": 0.5499006571908911,
+      "mse": 0.34050179211469533,
+      "mae": 0.25448028673835127,
+      "confusion_matrix": [
+        [
+          205,
+          17,
+          8,
+          0
+        ],
+        [
+          12,
+          7,
+          15,
+          0
+        ],
+        [
+          4,
+          2,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.8913043478260869,
+      "accuracy_class_1": 0.20588235294117646,
+      "accuracy_class_2": 0.5714285714285714,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_114735__5_E_T_IV__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_114735__5_E_T_IV__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_114735__5_E_T_IV__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_114735__5_E_T_IV__exp_002"
+    },
+    "prompt_hash": "7834b17d"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T19:46:31.381593",
+    "category": "5_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "06ddfabb",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Modelle - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen bei der Arbeit mit Modellen.\n\nKodiert wird, ob die Antwort einen Theoriebezug herstellt, z.B.:\n- Zweck/Einführung von Modellen (Modellbildung)\n- Niveaustufen der Modellarbeit (z.B. Veranschaulichung vs. Erklären von Zusammenhängen vs. Hypothesen/Voraussagen)\n- Modellkritik (Entsprechungen, Grenzen, Beiwerk) zur Vermeidung von Fehlvorstellungen\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Modellkritik, Fehlvorstellungen, Zweck von Modellen\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und mit Zweck/Notwendigkeit begründet\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 279,
+      "samples_used": 279,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6308243727598566,
+      "qwk": 0.41001514032958364,
+      "mse": 0.6057347670250897,
+      "mae": 0.44802867383512546,
+      "confusion_matrix": [
+        [
+          161,
+          50,
+          19,
+          0
+        ],
+        [
+          6,
+          6,
+          22,
+          0
+        ],
+        [
+          3,
+          2,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.7,
+      "accuracy_class_1": 0.17647058823529413,
+      "accuracy_class_2": 0.6428571428571429,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_194631__5_E_T_IV__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_194631__5_E_T_IV__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_194631__5_E_T_IV__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_194631__5_E_T_IV__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T19:47:58.607422",
+    "category": "5_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "ea56e776",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Modelle - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen bei der Arbeit mit Modellen.\n\nKodiert wird, ob die Antwort einen Theoriebezug herstellt, z.B.:\n- Zweck/Einführung von Modellen (Modellbildung)\n- Niveaustufen der Modellarbeit (z.B. Veranschaulichung vs. Erklären von Zusammenhängen vs. Hypothesen/Voraussagen)\n- Modellkritik (Entsprechungen, Grenzen, Beiwerk) zur Vermeidung von Fehlvorstellungen\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Modellkritik, Fehlvorstellungen, Zweck von Modellen\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und mit Zweck/Notwendigkeit begründet\n\n\nExamples:\n\nExample 1:\nText: \"Modelle dienen als Denk- und Arbeitsweise zur Erkenntnisgewinnung; hier dient es nur als Anschauungsobjekt.\"\nRating: 3\n\nExample 2:\nText: \"Modellkritik ist zentraler Aspekt; ohne Modellkritik können Fehlvorstellungen entstehen.\"\nRating: 2\n\nExample 3:\nText: \"Modell ist ziemlich klein\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 279,
+      "samples_used": 279,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7240143369175627,
+      "qwk": 0.4592609593757172,
+      "mse": 0.5448028673835126,
+      "mae": 0.3655913978494624,
+      "confusion_matrix": [
+        [
+          187,
+          21,
+          22,
+          0
+        ],
+        [
+          9,
+          4,
+          21,
+          0
+        ],
+        [
+          3,
+          0,
+          11,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.8130434782608695,
+      "accuracy_class_1": 0.11764705882352941,
+      "accuracy_class_2": 0.7857142857142857,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_194758__5_E_T_IV__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_194758__5_E_T_IV__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_194758__5_E_T_IV__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_194758__5_E_T_IV__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-20T00:26:02.655766",
+    "category": "5_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "e7cc8d09",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Modelle - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen bei der Arbeit mit Modellen.\n\nKodiert wird, ob die Antwort einen Theoriebezug herstellt, z.B.:\n- Zweck/Einführung von Modellen (Modellbildung)\n- Niveaustufen der Modellarbeit (z.B. Veranschaulichung vs. Erklären von Zusammenhängen vs. Hypothesen/Voraussagen)\n- Modellkritik (Entsprechungen, Grenzen, Beiwerk) zur Vermeidung von Fehlvorstellungen\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Modellkritik, Fehlvorstellungen, Zweck von Modellen\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und mit Zweck/Notwendigkeit begründet\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 279,
+      "samples_used": 279,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6702508960573477,
+      "qwk": 0.4452354797892014,
+      "mse": 0.5125448028673835,
+      "mae": 0.3906810035842294,
+      "confusion_matrix": [
+        [
+          170,
+          46,
+          14,
+          0
+        ],
+        [
+          8,
+          8,
+          18,
+          0
+        ],
+        [
+          3,
+          2,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.7391304347826086,
+      "accuracy_class_1": 0.23529411764705882,
+      "accuracy_class_2": 0.6428571428571429,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260120_002602__5_E_T_IV__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260120_002602__5_E_T_IV__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260120_002602__5_E_T_IV__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260120_002602__5_E_T_IV__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-20T00:30:03.452018",
+    "category": "5_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "9a00ca08",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Modelle - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen bei der Arbeit mit Modellen.\n\nKodiert wird, ob die Antwort einen Theoriebezug herstellt, z.B.:\n- Zweck/Einführung von Modellen (Modellbildung)\n- Niveaustufen der Modellarbeit (z.B. Veranschaulichung vs. Erklären von Zusammenhängen vs. Hypothesen/Voraussagen)\n- Modellkritik (Entsprechungen, Grenzen, Beiwerk) zur Vermeidung von Fehlvorstellungen\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Modellkritik, Fehlvorstellungen, Zweck von Modellen\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und mit Zweck/Notwendigkeit begründet\n\n\nExamples:\n\nExample 1:\nText: \"Modelle dienen als Denk- und Arbeitsweise zur Erkenntnisgewinnung; hier dient es nur als Anschauungsobjekt.\"\nRating: 3\n\nExample 2:\nText: \"Modellkritik ist zentraler Aspekt; ohne Modellkritik können Fehlvorstellungen entstehen.\"\nRating: 2\n\nExample 3:\nText: \"Modell ist ziemlich klein\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 279,
+      "samples_used": 279,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7311827956989247,
+      "qwk": 0.497110322728313,
+      "mse": 0.45161290322580644,
+      "mae": 0.32974910394265233,
+      "confusion_matrix": [
+        [
+          190,
+          26,
+          14,
+          0
+        ],
+        [
+          11,
+          4,
+          19,
+          0
+        ],
+        [
+          3,
+          1,
+          10,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.8260869565217391,
+      "accuracy_class_1": 0.11764705882352941,
+      "accuracy_class_2": 0.7142857142857143,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260120_003003__5_E_T_IV__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260120_003003__5_E_T_IV__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260120_003003__5_E_T_IV__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260120_003003__5_E_T_IV__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-28T00:06:07.977744",
+    "category": "5_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\5_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 279,
+      "samples_used": 279,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6881720430107527,
+      "qwk": 0.4655575498876303,
+      "mse": 0.4551971326164875,
+      "mae": 0.3548387096774194,
+      "confusion_matrix": [
+        [
+          167,
+          55,
+          6,
+          2
+        ],
+        [
+          5,
+          17,
+          12,
+          0
+        ],
+        [
+          2,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.7260869565217392,
+      "accuracy_class_1": 0.5,
+      "accuracy_class_2": 0.5714285714285714,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_000607__5_E_T_IV__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_000607__5_E_T_IV__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_000607__5_E_T_IV__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_000607__5_E_T_IV__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-28T00:07:46.813615",
+    "category": "5_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\5_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 279,
+      "samples_used": 279,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7598566308243727,
+      "qwk": 0.49856534762730575,
+      "mse": 0.40860215053763443,
+      "mae": 0.2939068100358423,
+      "confusion_matrix": [
+        [
+          190,
+          28,
+          11,
+          1
+        ],
+        [
+          7,
+          15,
+          12,
+          0
+        ],
+        [
+          2,
+          5,
+          7,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.8260869565217391,
+      "accuracy_class_1": 0.4411764705882353,
+      "accuracy_class_2": 0.5,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_000746__5_E_T_IV__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_000746__5_E_T_IV__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_000746__5_E_T_IV__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_000746__5_E_T_IV__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T04:45:18.382291",
+    "category": "5_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\5_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 279,
+      "samples_used": 279,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6738351254480287,
+      "qwk": 0.4687753686292454,
+      "mse": 0.46236559139784944,
+      "mae": 0.36917562724014336,
+      "confusion_matrix": [
+        [
+          163,
+          59,
+          7,
+          1
+        ],
+        [
+          4,
+          16,
+          14,
+          0
+        ],
+        [
+          3,
+          2,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.7086956521739131,
+      "accuracy_class_1": 0.47058823529411764,
+      "accuracy_class_2": 0.6428571428571429,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_044518__5_E_T_IV__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_044518__5_E_T_IV__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_044518__5_E_T_IV__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_044518__5_E_T_IV__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T04:49:42.894796",
+    "category": "5_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\5_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 279,
+      "samples_used": 279,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7634408602150538,
+      "qwk": 0.4973136169591117,
+      "mse": 0.3978494623655914,
+      "mae": 0.2903225806451613,
+      "confusion_matrix": [
+        [
+          189,
+          28,
+          13,
+          0
+        ],
+        [
+          7,
+          17,
+          10,
+          0
+        ],
+        [
+          2,
+          5,
+          7,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.8217391304347826,
+      "accuracy_class_1": 0.5,
+      "accuracy_class_2": 0.5,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_044942__5_E_T_IV__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_044942__5_E_T_IV__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_044942__5_E_T_IV__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_044942__5_E_T_IV__exp_010"
+    }
+  }
+]

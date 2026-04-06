@@ -1,0 +1,580 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T11:54:12.515313",
+    "category": "6_Dm_kA",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Sicherung/Transfer - Beschreiben/Merken - kognitive Aktivierung. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Sicherung/Transfer - Beschreiben/Merken - kognitive Aktivierung\n\nDecision Making (Dm): Handlungsalternative zur kognitiven Aktivierung in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, wie der Abschluss kognitiv aktivierender gestaltet werden soll (Vernetzung, Struktur–Funktion-Verknüpfung, Transferaufgaben, aktive Aufgaben statt Ablesen).\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur kognitiven Aktivierung am Ende\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Transferaufgabe einbauen“ ohne Ausführung\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Aufgaben/Beispiele (Tafel abdecken, Zuordnen, Transfer auf neue Situationen)\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_Dm_kA.csv",
+      "split": "test",
+      "total_samples": 230,
+      "samples_used": 230,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.4826086956521739,
+      "qwk": 0.29387755102040813,
+      "mse": 0.7521739130434782,
+      "mae": 0.5956521739130435,
+      "confusion_matrix": [
+        [
+          76,
+          79,
+          17
+        ],
+        [
+          2,
+          29,
+          16
+        ],
+        [
+          1,
+          4,
+          6
+        ]
+      ],
+      "accuracy_class_0": 0.4418604651162791,
+      "accuracy_class_1": 0.6170212765957447,
+      "accuracy_class_2": 0.5454545454545454
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_115412__6_Dm_kA__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_115412__6_Dm_kA__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_115412__6_Dm_kA__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_115412__6_Dm_kA__exp_001"
+    },
+    "prompt_hash": "d46b4938"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:55:01.020487",
+    "category": "6_Dm_kA",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Sicherung/Transfer - Beschreiben/Merken - kognitive Aktivierung. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Sicherung/Transfer - Beschreiben/Merken - kognitive Aktivierung\n\nDecision Making (Dm): Handlungsalternative zur kognitiven Aktivierung in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, wie der Abschluss kognitiv aktivierender gestaltet werden soll (Vernetzung, Struktur–Funktion-Verknüpfung, Transferaufgaben, aktive Aufgaben statt Ablesen).\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur kognitiven Aktivierung am Ende\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Transferaufgabe einbauen“ ohne Ausführung\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Aufgaben/Beispiele (Tafel abdecken, Zuordnen, Transfer auf neue Situationen)\n\n\nExamples:\n\nExample 1:\nText: \"Tafel abdecken und Kinder die Schichten/Funktionen erneut zuordnen lassen, danach Transferaufgabe\"\nRating: 2\n\nExample 2:\nText: \"Anstatt des Wiederholens eine Transferaufgabe stellen\"\nRating: 1\n\nExample 3:\nText: \"Ich würde es genauso machen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_Dm_kA.csv",
+      "split": "test",
+      "total_samples": 230,
+      "samples_used": 230,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6304347826086957,
+      "qwk": 0.3488108720271801,
+      "mse": 0.5,
+      "mae": 0.41304347826086957,
+      "confusion_matrix": [
+        [
+          112,
+          52,
+          8
+        ],
+        [
+          10,
+          30,
+          7
+        ],
+        [
+          2,
+          6,
+          3
+        ]
+      ],
+      "accuracy_class_0": 0.6511627906976745,
+      "accuracy_class_1": 0.6382978723404256,
+      "accuracy_class_2": 0.2727272727272727
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_115501__6_Dm_kA__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_115501__6_Dm_kA__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_115501__6_Dm_kA__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_115501__6_Dm_kA__exp_002"
+    },
+    "prompt_hash": "41e97392"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T19:58:18.681632",
+    "category": "6_Dm_kA",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "b037542c",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Sicherung/Transfer - Beschreiben/Merken - kognitive Aktivierung\n\nDecision Making (Dm): Handlungsalternative zur kognitiven Aktivierung in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, wie der Abschluss kognitiv aktivierender gestaltet werden soll (Vernetzung, Struktur–Funktion-Verknüpfung, Transferaufgaben, aktive Aufgaben statt Ablesen).\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur kognitiven Aktivierung am Ende\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Transferaufgabe einbauen“ ohne Ausführung\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Aufgaben/Beispiele (Tafel abdecken, Zuordnen, Transfer auf neue Situationen)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_Dm_kA.csv",
+      "split": "test",
+      "total_samples": 230,
+      "samples_used": 230,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5869565217391305,
+      "qwk": 0.3734542456718879,
+      "mse": 0.6608695652173913,
+      "mae": 0.4956521739130435,
+      "confusion_matrix": [
+        [
+          114,
+          41,
+          17
+        ],
+        [
+          11,
+          14,
+          22
+        ],
+        [
+          2,
+          2,
+          7
+        ]
+      ],
+      "accuracy_class_0": 0.6627906976744186,
+      "accuracy_class_1": 0.2978723404255319,
+      "accuracy_class_2": 0.6363636363636364
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_195818__6_Dm_kA__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_195818__6_Dm_kA__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_195818__6_Dm_kA__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_195818__6_Dm_kA__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T19:59:31.696686",
+    "category": "6_Dm_kA",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "f58817fd",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Sicherung/Transfer - Beschreiben/Merken - kognitive Aktivierung\n\nDecision Making (Dm): Handlungsalternative zur kognitiven Aktivierung in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, wie der Abschluss kognitiv aktivierender gestaltet werden soll (Vernetzung, Struktur–Funktion-Verknüpfung, Transferaufgaben, aktive Aufgaben statt Ablesen).\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur kognitiven Aktivierung am Ende\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Transferaufgabe einbauen“ ohne Ausführung\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Aufgaben/Beispiele (Tafel abdecken, Zuordnen, Transfer auf neue Situationen)\n\n\nExamples:\n\nExample 1:\nText: \"Tafel abdecken und Kinder die Schichten/Funktionen erneut zuordnen lassen, danach Transferaufgabe\"\nRating: 2\n\nExample 2:\nText: \"Anstatt des Wiederholens eine Transferaufgabe stellen\"\nRating: 1\n\nExample 3:\nText: \"Ich würde es genauso machen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_Dm_kA.csv",
+      "split": "test",
+      "total_samples": 230,
+      "samples_used": 230,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6347826086956522,
+      "qwk": 0.3657817109144542,
+      "mse": 0.5608695652173913,
+      "mae": 0.43043478260869567,
+      "confusion_matrix": [
+        [
+          121,
+          38,
+          13
+        ],
+        [
+          12,
+          21,
+          14
+        ],
+        [
+          2,
+          5,
+          4
+        ]
+      ],
+      "accuracy_class_0": 0.7034883720930233,
+      "accuracy_class_1": 0.44680851063829785,
+      "accuracy_class_2": 0.36363636363636365
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_195931__6_Dm_kA__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_195931__6_Dm_kA__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_195931__6_Dm_kA__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_195931__6_Dm_kA__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-20T00:59:11.006528",
+    "category": "6_Dm_kA",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "94dd0761",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Sicherung/Transfer - Beschreiben/Merken - kognitive Aktivierung\n\nDecision Making (Dm): Handlungsalternative zur kognitiven Aktivierung in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, wie der Abschluss kognitiv aktivierender gestaltet werden soll (Vernetzung, Struktur–Funktion-Verknüpfung, Transferaufgaben, aktive Aufgaben statt Ablesen).\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur kognitiven Aktivierung am Ende\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Transferaufgabe einbauen“ ohne Ausführung\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Aufgaben/Beispiele (Tafel abdecken, Zuordnen, Transfer auf neue Situationen)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_Dm_kA.csv",
+      "split": "test",
+      "total_samples": 230,
+      "samples_used": 230,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6,
+      "qwk": 0.3838193791157103,
+      "mse": 0.5695652173913044,
+      "mae": 0.45652173913043476,
+      "confusion_matrix": [
+        [
+          108,
+          53,
+          11
+        ],
+        [
+          8,
+          24,
+          15
+        ],
+        [
+          2,
+          3,
+          6
+        ]
+      ],
+      "accuracy_class_0": 0.627906976744186,
+      "accuracy_class_1": 0.5106382978723404,
+      "accuracy_class_2": 0.5454545454545454
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260120_005911__6_Dm_kA__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260120_005911__6_Dm_kA__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260120_005911__6_Dm_kA__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260120_005911__6_Dm_kA__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-20T01:02:30.386468",
+    "category": "6_Dm_kA",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "b62fa36b",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Sicherung/Transfer - Beschreiben/Merken - kognitive Aktivierung\n\nDecision Making (Dm): Handlungsalternative zur kognitiven Aktivierung in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, wie der Abschluss kognitiv aktivierender gestaltet werden soll (Vernetzung, Struktur–Funktion-Verknüpfung, Transferaufgaben, aktive Aufgaben statt Ablesen).\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur kognitiven Aktivierung am Ende\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Transferaufgabe einbauen“ ohne Ausführung\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- konkrete Aufgaben/Beispiele (Tafel abdecken, Zuordnen, Transfer auf neue Situationen)\n\n\nExamples:\n\nExample 1:\nText: \"Tafel abdecken und Kinder die Schichten/Funktionen erneut zuordnen lassen, danach Transferaufgabe\"\nRating: 2\n\nExample 2:\nText: \"Anstatt des Wiederholens eine Transferaufgabe stellen\"\nRating: 1\n\nExample 3:\nText: \"Ich würde es genauso machen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_Dm_kA.csv",
+      "split": "test",
+      "total_samples": 230,
+      "samples_used": 230,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6521739130434783,
+      "qwk": 0.3702497285559174,
+      "mse": 0.5043478260869565,
+      "mae": 0.4,
+      "confusion_matrix": [
+        [
+          124,
+          38,
+          10
+        ],
+        [
+          15,
+          22,
+          10
+        ],
+        [
+          2,
+          5,
+          4
+        ]
+      ],
+      "accuracy_class_0": 0.7209302325581395,
+      "accuracy_class_1": 0.46808510638297873,
+      "accuracy_class_2": 0.36363636363636365
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260120_010230__6_Dm_kA__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260120_010230__6_Dm_kA__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260120_010230__6_Dm_kA__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260120_010230__6_Dm_kA__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-28T00:19:59.103182",
+    "category": "6_Dm_kA",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\6_Dm_kA.csv",
+      "split": "test",
+      "total_samples": 230,
+      "samples_used": 230,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5739130434782609,
+      "qwk": 0.35025380710659904,
+      "mse": 0.5565217391304348,
+      "mae": 0.46956521739130436,
+      "confusion_matrix": [
+        [
+          98,
+          66,
+          8
+        ],
+        [
+          9,
+          28,
+          10
+        ],
+        [
+          2,
+          3,
+          6
+        ]
+      ],
+      "accuracy_class_0": 0.5697674418604651,
+      "accuracy_class_1": 0.5957446808510638,
+      "accuracy_class_2": 0.5454545454545454
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_001959__6_Dm_kA__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_001959__6_Dm_kA__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_001959__6_Dm_kA__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_001959__6_Dm_kA__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-28T00:21:24.356009",
+    "category": "6_Dm_kA",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\6_Dm_kA.csv",
+      "split": "test",
+      "total_samples": 230,
+      "samples_used": 230,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.591304347826087,
+      "qwk": 0.3895055499495459,
+      "mse": 0.5260869565217391,
+      "mae": 0.44782608695652176,
+      "confusion_matrix": [
+        [
+          106,
+          59,
+          7
+        ],
+        [
+          10,
+          24,
+          13
+        ],
+        [
+          2,
+          3,
+          6
+        ]
+      ],
+      "accuracy_class_0": 0.6162790697674418,
+      "accuracy_class_1": 0.5106382978723404,
+      "accuracy_class_2": 0.5454545454545454
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_002124__6_Dm_kA__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_002124__6_Dm_kA__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_002124__6_Dm_kA__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_002124__6_Dm_kA__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T05:22:08.061113",
+    "category": "6_Dm_kA",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\6_Dm_kA.csv",
+      "split": "test",
+      "total_samples": 230,
+      "samples_used": 230,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5695652173913044,
+      "qwk": 0.3573515092502434,
+      "mse": 0.5739130434782609,
+      "mae": 0.4782608695652174,
+      "confusion_matrix": [
+        [
+          97,
+          66,
+          9
+        ],
+        [
+          7,
+          28,
+          12
+        ],
+        [
+          2,
+          3,
+          6
+        ]
+      ],
+      "accuracy_class_0": 0.563953488372093,
+      "accuracy_class_1": 0.5957446808510638,
+      "accuracy_class_2": 0.5454545454545454
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_052208__6_Dm_kA__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_052208__6_Dm_kA__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_052208__6_Dm_kA__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_052208__6_Dm_kA__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T05:25:49.022217",
+    "category": "6_Dm_kA",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\6_Dm_kA.csv",
+      "split": "test",
+      "total_samples": 230,
+      "samples_used": 230,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6,
+      "qwk": 0.4240570846075433,
+      "mse": 0.49130434782608695,
+      "mae": 0.43043478260869567,
+      "confusion_matrix": [
+        [
+          107,
+          59,
+          6
+        ],
+        [
+          9,
+          25,
+          13
+        ],
+        [
+          1,
+          4,
+          6
+        ]
+      ],
+      "accuracy_class_0": 0.622093023255814,
+      "accuracy_class_1": 0.5319148936170213,
+      "accuracy_class_2": 0.5454545454545454
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_052549__6_Dm_kA__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_052549__6_Dm_kA__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_052549__6_Dm_kA__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_052549__6_Dm_kA__exp_010"
+    }
+  }
+]

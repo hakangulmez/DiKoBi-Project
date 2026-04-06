@@ -1,0 +1,29 @@
+# Required packages for DiKobi project
+# pip install -r requirements.txt
+
+# Data Processing (preprocessing pipeline)
+pandas                 # Data manipulation and CSV/Excel handling
+numpy                  # Numerical operations
+openpyxl               # Excel file reading/writing
+scikit-learn           # Train/test split and evaluation metrics
+matplotlib              # Plotting and visualization
+
+# Deep Learning Framework (LLM classification)
+torch                   # PyTorch with CUDA/MPS support
+transformers            # Hugging Face models
+accelerate              # GPU optimization
+bitsandbytes            # Model quantization (Linux/Windows only)
+hf_xet                  # Hugging Face optimizations
+datasets               # Hugging Face datasets
+protobuf               # Required by some models (DeepSeek)
+
+# RAG System (Retrieval-Augmented Generation)
+sentence-transformers   # Text embeddings for semantic search
+faiss-cpu              # Vector similarity search (use faiss-gpu for GPU)
+# faiss-gpu             # Uncomment for GPU-accelerated vector search
+pypdf                  # PDF document loading (optional)
+
+# Utilities
+tqdm                   # Progress bars
+python-dotenv          # Environment variables
+nbstripout              # Strip notebook outputs from git

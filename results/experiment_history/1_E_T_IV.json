@@ -1,0 +1,680 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T11:03:37.888821",
+    "category": "1_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Unterrichtseinstieg - Einschätzen - Tiefe/Inhaltliche Vielfalt. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2, 3. Do NOT add explanation or extra text.\n\nCategory: Unterrichtseinstieg - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung, warum die Einstiegs-Situation verbesserungsfähig ist.\n\nKodiert wird, ob die Antwort die beobachteten Aspekte mit der professionellen Wissensbasis verknüpft (Theoriebezug). Ein Theoriebezug liegt vor, wenn einschlägige Schlagwörter genannt oder eindeutig umschrieben werden.\n\nBeispiele für relevante Schlagwörter (u.a.):\n- kognitive Aktivierung, Schüleraktivierung, Basiskonzeptorientierung (z.B. Struktur–Funktion), kognitiver Konflikt, Problemorientierung, Vorwissensaktivierung\n- Interessentheorie, situationales Interesse, Catch-Komponente, sachbezogener Anreiz, momentane Lernmotivation/Lernbereitschaft, Diskrepanzerlebnisse\n\nHinweis: Floskeln oder generische Kommentare ohne Theoriebezug sind niedriger zu kodieren.\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie vorhanden\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n- alltagssprachliche Erklärung ohne erkennbaren Theoriebezug\n- auch „sollte“-Aussagen ohne Theoriebezug\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- einschlägiges Konzept/Schlagwort wird genannt oder eindeutig umschrieben\n- kann auch als „sollte“-Aussage auftreten\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie/Konzept wird genannt und die Notwendigkeit/Zweck wird begründet (Bezug zum Beispiel)\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 452,
+      "samples_used": 452,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.41814159292035397,
+      "qwk": 0.3768538733719792,
+      "mse": 0.6482300884955752,
+      "mae": 0.6039823008849557,
+      "confusion_matrix": [
+        [
+          104,
+          185,
+          6,
+          0
+        ],
+        [
+          12,
+          61,
+          7,
+          0
+        ],
+        [
+          3,
+          47,
+          23,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.3525423728813559,
+      "accuracy_class_1": 0.7625,
+      "accuracy_class_2": 0.3150684931506849,
+      "accuracy_class_3": 0.25
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_110337__1_E_T_IV__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_110337__1_E_T_IV__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_110337__1_E_T_IV__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_110337__1_E_T_IV__exp_001"
+    },
+    "prompt_hash": "73a3ebf5"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:05:23.801409",
+    "category": "1_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Unterrichtseinstieg - Einschätzen - Tiefe/Inhaltliche Vielfalt. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2, 3. Do NOT add explanation or extra text.\n\nCategory: Unterrichtseinstieg - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung, warum die Einstiegs-Situation verbesserungsfähig ist.\n\nKodiert wird, ob die Antwort die beobachteten Aspekte mit der professionellen Wissensbasis verknüpft (Theoriebezug). Ein Theoriebezug liegt vor, wenn einschlägige Schlagwörter genannt oder eindeutig umschrieben werden.\n\nBeispiele für relevante Schlagwörter (u.a.):\n- kognitive Aktivierung, Schüleraktivierung, Basiskonzeptorientierung (z.B. Struktur–Funktion), kognitiver Konflikt, Problemorientierung, Vorwissensaktivierung\n- Interessentheorie, situationales Interesse, Catch-Komponente, sachbezogener Anreiz, momentane Lernmotivation/Lernbereitschaft, Diskrepanzerlebnisse\n\nHinweis: Floskeln oder generische Kommentare ohne Theoriebezug sind niedriger zu kodieren.\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie vorhanden\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n- alltagssprachliche Erklärung ohne erkennbaren Theoriebezug\n- auch „sollte“-Aussagen ohne Theoriebezug\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- einschlägiges Konzept/Schlagwort wird genannt oder eindeutig umschrieben\n- kann auch als „sollte“-Aussage auftreten\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie/Konzept wird genannt und die Notwendigkeit/Zweck wird begründet (Bezug zum Beispiel)\n\n\nExamples:\n\nExample 1:\nText: \"Catch-Komponente kann situationales Interesse fördern, SuS sind mehr interessiert an dem Thema\"\nRating: 3\n\nExample 2:\nText: \"LK fragt nur was letzte Stunde besprochen wurde ohne aktivierenden Kontext (kein Catch)\"\nRating: 2\n\nExample 3:\nText: \"Begrüßung hat gefehlt\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 452,
+      "samples_used": 452,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5575221238938053,
+      "qwk": 0.49404915171802133,
+      "mse": 0.6924778761061947,
+      "mae": 0.5243362831858407,
+      "confusion_matrix": [
+        [
+          188,
+          84,
+          22,
+          1
+        ],
+        [
+          26,
+          35,
+          16,
+          3
+        ],
+        [
+          9,
+          27,
+          27,
+          10
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.6372881355932203,
+      "accuracy_class_1": 0.4375,
+      "accuracy_class_2": 0.3698630136986301,
+      "accuracy_class_3": 0.5
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_110523__1_E_T_IV__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_110523__1_E_T_IV__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_110523__1_E_T_IV__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_110523__1_E_T_IV__exp_002"
+    },
+    "prompt_hash": "6277f017"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T17:38:39.158065",
+    "category": "1_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "a212370a",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Unterrichtseinstieg - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung, warum die Einstiegs-Situation verbesserungsfähig ist.\n\nKodiert wird, ob die Antwort die beobachteten Aspekte mit der professionellen Wissensbasis verknüpft (Theoriebezug). Ein Theoriebezug liegt vor, wenn einschlägige Schlagwörter genannt oder eindeutig umschrieben werden.\n\nBeispiele für relevante Schlagwörter (u.a.):\n- kognitive Aktivierung, Schüleraktivierung, Basiskonzeptorientierung (z.B. Struktur–Funktion), kognitiver Konflikt, Problemorientierung, Vorwissensaktivierung\n- Interessentheorie, situationales Interesse, Catch-Komponente, sachbezogener Anreiz, momentane Lernmotivation/Lernbereitschaft, Diskrepanzerlebnisse\n\nHinweis: Floskeln oder generische Kommentare ohne Theoriebezug sind niedriger zu kodieren.\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie vorhanden\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n- alltagssprachliche Erklärung ohne erkennbaren Theoriebezug\n- auch „sollte“-Aussagen ohne Theoriebezug\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- einschlägiges Konzept/Schlagwort wird genannt oder eindeutig umschrieben\n- kann auch als „sollte“-Aussage auftreten\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie/Konzept wird genannt und die Notwendigkeit/Zweck wird begründet (Bezug zum Beispiel)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 452,
+      "samples_used": 452,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5331858407079646,
+      "qwk": 0.46421120509805414,
+      "mse": 0.5530973451327433,
+      "mae": 0.49557522123893805,
+      "confusion_matrix": [
+        [
+          168,
+          123,
+          4,
+          0
+        ],
+        [
+          23,
+          50,
+          7,
+          0
+        ],
+        [
+          8,
+          42,
+          23,
+          0
+        ],
+        [
+          0,
+          1,
+          3,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.5694915254237288,
+      "accuracy_class_1": 0.625,
+      "accuracy_class_2": 0.3150684931506849,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_173839__1_E_T_IV__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_173839__1_E_T_IV__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_173839__1_E_T_IV__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_173839__1_E_T_IV__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T17:45:18.690745",
+    "category": "1_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "89b7c467",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Unterrichtseinstieg - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung, warum die Einstiegs-Situation verbesserungsfähig ist.\n\nKodiert wird, ob die Antwort die beobachteten Aspekte mit der professionellen Wissensbasis verknüpft (Theoriebezug). Ein Theoriebezug liegt vor, wenn einschlägige Schlagwörter genannt oder eindeutig umschrieben werden.\n\nBeispiele für relevante Schlagwörter (u.a.):\n- kognitive Aktivierung, Schüleraktivierung, Basiskonzeptorientierung (z.B. Struktur–Funktion), kognitiver Konflikt, Problemorientierung, Vorwissensaktivierung\n- Interessentheorie, situationales Interesse, Catch-Komponente, sachbezogener Anreiz, momentane Lernmotivation/Lernbereitschaft, Diskrepanzerlebnisse\n\nHinweis: Floskeln oder generische Kommentare ohne Theoriebezug sind niedriger zu kodieren.\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie vorhanden\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n- alltagssprachliche Erklärung ohne erkennbaren Theoriebezug\n- auch „sollte“-Aussagen ohne Theoriebezug\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- einschlägiges Konzept/Schlagwort wird genannt oder eindeutig umschrieben\n- kann auch als „sollte“-Aussage auftreten\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie/Konzept wird genannt und die Notwendigkeit/Zweck wird begründet (Bezug zum Beispiel)\n\n\nExamples:\n\nExample 1:\nText: \"Catch-Komponente kann situationales Interesse fördern, SuS sind mehr interessiert an dem Thema\"\nRating: 3\n\nExample 2:\nText: \"LK fragt nur was letzte Stunde besprochen wurde ohne aktivierenden Kontext (kein Catch)\"\nRating: 2\n\nExample 3:\nText: \"Begrüßung hat gefehlt\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 452,
+      "samples_used": 452,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.581858407079646,
+      "qwk": 0.5151849468297017,
+      "mse": 0.6194690265486725,
+      "mae": 0.4823008849557522,
+      "confusion_matrix": [
+        [
+          194,
+          83,
+          17,
+          1
+        ],
+        [
+          23,
+          39,
+          17,
+          1
+        ],
+        [
+          7,
+          32,
+          28,
+          6
+        ],
+        [
+          1,
+          0,
+          1,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.6576271186440678,
+      "accuracy_class_1": 0.4875,
+      "accuracy_class_2": 0.3835616438356164,
+      "accuracy_class_3": 0.5
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_174518__1_E_T_IV__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_174518__1_E_T_IV__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_174518__1_E_T_IV__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_174518__1_E_T_IV__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T18:40:11.294007",
+    "category": "1_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "03d9da04",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Unterrichtseinstieg - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung, warum die Einstiegs-Situation verbesserungsfähig ist.\n\nKodiert wird, ob die Antwort die beobachteten Aspekte mit der professionellen Wissensbasis verknüpft (Theoriebezug). Ein Theoriebezug liegt vor, wenn einschlägige Schlagwörter genannt oder eindeutig umschrieben werden.\n\nBeispiele für relevante Schlagwörter (u.a.):\n- kognitive Aktivierung, Schüleraktivierung, Basiskonzeptorientierung (z.B. Struktur–Funktion), kognitiver Konflikt, Problemorientierung, Vorwissensaktivierung\n- Interessentheorie, situationales Interesse, Catch-Komponente, sachbezogener Anreiz, momentane Lernmotivation/Lernbereitschaft, Diskrepanzerlebnisse\n\nHinweis: Floskeln oder generische Kommentare ohne Theoriebezug sind niedriger zu kodieren.\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie vorhanden\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n- alltagssprachliche Erklärung ohne erkennbaren Theoriebezug\n- auch „sollte“-Aussagen ohne Theoriebezug\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- einschlägiges Konzept/Schlagwort wird genannt oder eindeutig umschrieben\n- kann auch als „sollte“-Aussage auftreten\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie/Konzept wird genannt und die Notwendigkeit/Zweck wird begründet (Bezug zum Beispiel)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 452,
+      "samples_used": 452,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6415929203539823,
+      "qwk": 0.5481936313008711,
+      "mse": 0.49557522123893805,
+      "mae": 0.4026548672566372,
+      "confusion_matrix": [
+        [
+          225,
+          63,
+          7,
+          0
+        ],
+        [
+          33,
+          39,
+          8,
+          0
+        ],
+        [
+          11,
+          34,
+          26,
+          2
+        ],
+        [
+          1,
+          0,
+          3,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.7627118644067796,
+      "accuracy_class_1": 0.4875,
+      "accuracy_class_2": 0.3561643835616438,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_184011__1_E_T_IV__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_184011__1_E_T_IV__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_184011__1_E_T_IV__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_184011__1_E_T_IV__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T18:42:45.180143",
+    "category": "1_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "7bccf52d",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Unterrichtseinstieg - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung, warum die Einstiegs-Situation verbesserungsfähig ist.\n\nKodiert wird, ob die Antwort die beobachteten Aspekte mit der professionellen Wissensbasis verknüpft (Theoriebezug). Ein Theoriebezug liegt vor, wenn einschlägige Schlagwörter genannt oder eindeutig umschrieben werden.\n\nBeispiele für relevante Schlagwörter (u.a.):\n- kognitive Aktivierung, Schüleraktivierung, Basiskonzeptorientierung (z.B. Struktur–Funktion), kognitiver Konflikt, Problemorientierung, Vorwissensaktivierung\n- Interessentheorie, situationales Interesse, Catch-Komponente, sachbezogener Anreiz, momentane Lernmotivation/Lernbereitschaft, Diskrepanzerlebnisse\n\nHinweis: Floskeln oder generische Kommentare ohne Theoriebezug sind niedriger zu kodieren.\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie vorhanden\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n- alltagssprachliche Erklärung ohne erkennbaren Theoriebezug\n- auch „sollte“-Aussagen ohne Theoriebezug\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- einschlägiges Konzept/Schlagwort wird genannt oder eindeutig umschrieben\n- kann auch als „sollte“-Aussage auftreten\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie/Konzept wird genannt und die Notwendigkeit/Zweck wird begründet (Bezug zum Beispiel)\n\n\nExamples:\n\nExample 1:\nText: \"Catch-Komponente kann situationales Interesse fördern, SuS sind mehr interessiert an dem Thema\"\nRating: 3\n\nExample 2:\nText: \"LK fragt nur was letzte Stunde besprochen wurde ohne aktivierenden Kontext (kein Catch)\"\nRating: 2\n\nExample 3:\nText: \"Begrüßung hat gefehlt\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\1_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 452,
+      "samples_used": 452,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6017699115044248,
+      "qwk": 0.5317872603586891,
+      "mse": 0.5929203539823009,
+      "mae": 0.46017699115044247,
+      "confusion_matrix": [
+        [
+          203,
+          77,
+          14,
+          1
+        ],
+        [
+          24,
+          40,
+          15,
+          1
+        ],
+        [
+          9,
+          30,
+          27,
+          7
+        ],
+        [
+          1,
+          0,
+          1,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.688135593220339,
+      "accuracy_class_1": 0.5,
+      "accuracy_class_2": 0.3698630136986301,
+      "accuracy_class_3": 0.5
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_184245__1_E_T_IV__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_184245__1_E_T_IV__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_184245__1_E_T_IV__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_184245__1_E_T_IV__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-27T22:47:49.722423",
+    "category": "1_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\1_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 452,
+      "samples_used": 452,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5464601769911505,
+      "qwk": 0.4192853195800331,
+      "mse": 0.6172566371681416,
+      "mae": 0.5066371681415929,
+      "confusion_matrix": [
+        [
+          171,
+          114,
+          10,
+          0
+        ],
+        [
+          19,
+          53,
+          8,
+          0
+        ],
+        [
+          11,
+          40,
+          22,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.5796610169491525,
+      "accuracy_class_1": 0.6625,
+      "accuracy_class_2": 0.3013698630136986,
+      "accuracy_class_3": 0.25
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_224749__1_E_T_IV__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_224749__1_E_T_IV__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_224749__1_E_T_IV__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_224749__1_E_T_IV__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-27T22:50:43.406688",
+    "category": "1_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\1_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 452,
+      "samples_used": 452,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5995575221238938,
+      "qwk": 0.47107537205952954,
+      "mse": 0.6039823008849557,
+      "mae": 0.4668141592920354,
+      "confusion_matrix": [
+        [
+          207,
+          72,
+          15,
+          1
+        ],
+        [
+          31,
+          39,
+          10,
+          0
+        ],
+        [
+          11,
+          35,
+          25,
+          2
+        ],
+        [
+          0,
+          2,
+          2,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.7016949152542373,
+      "accuracy_class_1": 0.4875,
+      "accuracy_class_2": 0.3424657534246575,
+      "accuracy_class_3": 0.0
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_225043__1_E_T_IV__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_225043__1_E_T_IV__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_225043__1_E_T_IV__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_225043__1_E_T_IV__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T01:20:09.310411",
+    "category": "1_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\1_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 452,
+      "samples_used": 452,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.5530973451327433,
+      "qwk": 0.45075729993446445,
+      "mse": 0.5907079646017699,
+      "mae": 0.49336283185840707,
+      "confusion_matrix": [
+        [
+          172,
+          113,
+          10,
+          0
+        ],
+        [
+          18,
+          53,
+          9,
+          0
+        ],
+        [
+          8,
+          41,
+          24,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.5830508474576271,
+      "accuracy_class_1": 0.6625,
+      "accuracy_class_2": 0.3287671232876712,
+      "accuracy_class_3": 0.25
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_012009__1_E_T_IV__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_012009__1_E_T_IV__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_012009__1_E_T_IV__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_012009__1_E_T_IV__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T01:27:28.397023",
+    "category": "1_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\1_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 452,
+      "samples_used": 452,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6238938053097345,
+      "qwk": 0.4657255999726897,
+      "mse": 0.6128318584070797,
+      "mae": 0.45353982300884954,
+      "confusion_matrix": [
+        [
+          212,
+          65,
+          17,
+          1
+        ],
+        [
+          29,
+          44,
+          7,
+          0
+        ],
+        [
+          14,
+          32,
+          25,
+          2
+        ],
+        [
+          0,
+          2,
+          1,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.7186440677966102,
+      "accuracy_class_1": 0.55,
+      "accuracy_class_2": 0.3424657534246575,
+      "accuracy_class_3": 0.25
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_012728__1_E_T_IV__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_012728__1_E_T_IV__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_012728__1_E_T_IV__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_012728__1_E_T_IV__exp_010"
+    }
+  }
+]

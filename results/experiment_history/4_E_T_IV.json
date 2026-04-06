@@ -1,0 +1,607 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T11:37:16.912641",
+    "category": "4_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Experimente - Einschätzen - Tiefe/Inhaltliche Vielfalt. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2, 3. Do NOT add explanation or extra text.\n\nCategory: Experimente - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen im Erkenntnisprozess/Experimentieren.\n\nKodiert wird, ob die Antwort die Beobachtungen mit Theorie/Schlagwörtern verknüpft, z.B.:\n- Erkenntnisgewinnung / Kompetenzbereich Erkenntnisgewinnung\n- Erkenntnisprozess, wissenschaftliches Denken (scientific reasoning), wissenschaftliche Arbeitsweise\n- hypothesen-geleitetes Experimentieren, hypothetisch-deduktiver Erkenntnisweg\n- Bildungsstandards\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Erkenntnisgewinnung, wissenschaftliche Arbeitsweise, Hypothesenbildung\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und Zweck/Notwendigkeit wird begründet\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 438,
+      "samples_used": 438,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7876712328767124,
+      "qwk": 0.434952124304799,
+      "mse": 0.3082191780821918,
+      "mae": 0.24429223744292236,
+      "confusion_matrix": [
+        [
+          320,
+          40,
+          10
+        ],
+        [
+          20,
+          21,
+          8
+        ],
+        [
+          4,
+          11,
+          4
+        ]
+      ],
+      "accuracy_class_0": 0.8648648648648649,
+      "accuracy_class_1": 0.42857142857142855,
+      "accuracy_class_2": 0.21052631578947367
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_113716__4_E_T_IV__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_113716__4_E_T_IV__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_113716__4_E_T_IV__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_113716__4_E_T_IV__exp_001"
+    },
+    "prompt_hash": "fb76f98b"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:38:49.080000",
+    "category": "4_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Experimente - Einschätzen - Tiefe/Inhaltliche Vielfalt. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2, 3. Do NOT add explanation or extra text.\n\nCategory: Experimente - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen im Erkenntnisprozess/Experimentieren.\n\nKodiert wird, ob die Antwort die Beobachtungen mit Theorie/Schlagwörtern verknüpft, z.B.:\n- Erkenntnisgewinnung / Kompetenzbereich Erkenntnisgewinnung\n- Erkenntnisprozess, wissenschaftliches Denken (scientific reasoning), wissenschaftliche Arbeitsweise\n- hypothesen-geleitetes Experimentieren, hypothetisch-deduktiver Erkenntnisweg\n- Bildungsstandards\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Erkenntnisgewinnung, wissenschaftliche Arbeitsweise, Hypothesenbildung\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und Zweck/Notwendigkeit wird begründet\n\n\nExamples:\n\nExample 1:\nText: \"SuS üben nicht die naturwissenschaftliche Arbeitsweise ein\"\nRating: 1\n\nExample 2:\nText: \"Erkenntnisgewinnung: Frage -> Hypothese -> Planung/Durchführung -> Analysieren/Interpretieren\"\nRating: 2\n\nExample 3:\nText: \"Schüler-Lehrer Beziehung\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 438,
+      "samples_used": 438,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7397260273972602,
+      "qwk": 0.4359526938239159,
+      "mse": 0.3356164383561644,
+      "mae": 0.2853881278538813,
+      "confusion_matrix": [
+        [
+          293,
+          68,
+          9
+        ],
+        [
+          13,
+          27,
+          9
+        ],
+        [
+          2,
+          13,
+          4
+        ]
+      ],
+      "accuracy_class_0": 0.7918918918918919,
+      "accuracy_class_1": 0.5510204081632653,
+      "accuracy_class_2": 0.21052631578947367
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_113849__4_E_T_IV__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_113849__4_E_T_IV__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_113849__4_E_T_IV__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_113849__4_E_T_IV__exp_002"
+    },
+    "prompt_hash": "5b5da6f0"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T19:32:05.168931",
+    "category": "4_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "ce78745a",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Experimente - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen im Erkenntnisprozess/Experimentieren.\n\nKodiert wird, ob die Antwort die Beobachtungen mit Theorie/Schlagwörtern verknüpft, z.B.:\n- Erkenntnisgewinnung / Kompetenzbereich Erkenntnisgewinnung\n- Erkenntnisprozess, wissenschaftliches Denken (scientific reasoning), wissenschaftliche Arbeitsweise\n- hypothesen-geleitetes Experimentieren, hypothetisch-deduktiver Erkenntnisweg\n- Bildungsstandards\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Erkenntnisgewinnung, wissenschaftliche Arbeitsweise, Hypothesenbildung\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und Zweck/Notwendigkeit wird begründet\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 438,
+      "samples_used": 438,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8059360730593608,
+      "qwk": 0.4424783520679826,
+      "mse": 0.3242009132420091,
+      "mae": 0.2374429223744292,
+      "confusion_matrix": [
+        [
+          333,
+          23,
+          14
+        ],
+        [
+          23,
+          14,
+          12
+        ],
+        [
+          5,
+          8,
+          6
+        ]
+      ],
+      "accuracy_class_0": 0.9,
+      "accuracy_class_1": 0.2857142857142857,
+      "accuracy_class_2": 0.3157894736842105
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_193205__4_E_T_IV__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_193205__4_E_T_IV__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_193205__4_E_T_IV__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_193205__4_E_T_IV__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T19:34:21.297720",
+    "category": "4_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "e6a3fb3a",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Experimente - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen im Erkenntnisprozess/Experimentieren.\n\nKodiert wird, ob die Antwort die Beobachtungen mit Theorie/Schlagwörtern verknüpft, z.B.:\n- Erkenntnisgewinnung / Kompetenzbereich Erkenntnisgewinnung\n- Erkenntnisprozess, wissenschaftliches Denken (scientific reasoning), wissenschaftliche Arbeitsweise\n- hypothesen-geleitetes Experimentieren, hypothetisch-deduktiver Erkenntnisweg\n- Bildungsstandards\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Erkenntnisgewinnung, wissenschaftliche Arbeitsweise, Hypothesenbildung\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und Zweck/Notwendigkeit wird begründet\n\n\nExamples:\n\nExample 1:\nText: \"SuS üben nicht die naturwissenschaftliche Arbeitsweise ein\"\nRating: 1\n\nExample 2:\nText: \"Erkenntnisgewinnung: Frage -> Hypothese -> Planung/Durchführung -> Analysieren/Interpretieren\"\nRating: 2\n\nExample 3:\nText: \"Schüler-Lehrer Beziehung\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 438,
+      "samples_used": 438,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.773972602739726,
+      "qwk": 0.4511564767921473,
+      "mse": 0.3287671232876712,
+      "mae": 0.2602739726027397,
+      "confusion_matrix": [
+        [
+          310,
+          48,
+          12,
+          0
+        ],
+        [
+          17,
+          24,
+          8,
+          0
+        ],
+        [
+          3,
+          10,
+          5,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.8378378378378378,
+      "accuracy_class_1": 0.4897959183673469,
+      "accuracy_class_2": 0.2631578947368421
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_193421__4_E_T_IV__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_193421__4_E_T_IV__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_193421__4_E_T_IV__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_193421__4_E_T_IV__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T23:45:52.775789",
+    "category": "4_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "e394644c",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Experimente - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen im Erkenntnisprozess/Experimentieren.\n\nKodiert wird, ob die Antwort die Beobachtungen mit Theorie/Schlagwörtern verknüpft, z.B.:\n- Erkenntnisgewinnung / Kompetenzbereich Erkenntnisgewinnung\n- Erkenntnisprozess, wissenschaftliches Denken (scientific reasoning), wissenschaftliche Arbeitsweise\n- hypothesen-geleitetes Experimentieren, hypothetisch-deduktiver Erkenntnisweg\n- Bildungsstandards\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Erkenntnisgewinnung, wissenschaftliche Arbeitsweise, Hypothesenbildung\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und Zweck/Notwendigkeit wird begründet\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 438,
+      "samples_used": 438,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.817351598173516,
+      "qwk": 0.47602758930073463,
+      "mse": 0.2922374429223744,
+      "mae": 0.2191780821917808,
+      "confusion_matrix": [
+        [
+          334,
+          23,
+          13
+        ],
+        [
+          24,
+          17,
+          8
+        ],
+        [
+          3,
+          9,
+          7
+        ]
+      ],
+      "accuracy_class_0": 0.9027027027027027,
+      "accuracy_class_1": 0.3469387755102041,
+      "accuracy_class_2": 0.3684210526315789
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_234552__4_E_T_IV__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_234552__4_E_T_IV__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_234552__4_E_T_IV__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_234552__4_E_T_IV__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T23:52:10.334873",
+    "category": "4_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "a80da6e6",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Experimente - Einschätzen - Tiefe/Inhaltliche Vielfalt\n\nExplanation (E_T_IV): Theoriebezug zur Begründung von Problemen im Erkenntnisprozess/Experimentieren.\n\nKodiert wird, ob die Antwort die Beobachtungen mit Theorie/Schlagwörtern verknüpft, z.B.:\n- Erkenntnisgewinnung / Kompetenzbereich Erkenntnisgewinnung\n- Erkenntnisprozess, wissenschaftliches Denken (scientific reasoning), wissenschaftliche Arbeitsweise\n- hypothesen-geleitetes Experimentieren, hypothetisch-deduktiver Erkenntnisweg\n- Bildungsstandards\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Explanation_Theorie\n\n\n1: Floskel / generischer Kommentar ohne Theorienennung\n\n\n2: Nennung/umschreibbarer Theoriebezug\n- z.B. Erkenntnisgewinnung, wissenschaftliche Arbeitsweise, Hypothesenbildung\n\n\n3: Theoriebezug + zweckmäßige Begründung\n- Theorie wird genannt und Zweck/Notwendigkeit wird begründet\n\n\nExamples:\n\nExample 1:\nText: \"SuS üben nicht die naturwissenschaftliche Arbeitsweise ein\"\nRating: 1\n\nExample 2:\nText: \"Erkenntnisgewinnung: Frage -> Hypothese -> Planung/Durchführung -> Analysieren/Interpretieren\"\nRating: 2\n\nExample 3:\nText: \"Schüler-Lehrer Beziehung\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2, 3\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 438,
+      "samples_used": 438,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7922374429223744,
+      "qwk": 0.47000382116927786,
+      "mse": 0.3036529680365297,
+      "mae": 0.23972602739726026,
+      "confusion_matrix": [
+        [
+          317,
+          42,
+          11
+        ],
+        [
+          17,
+          24,
+          8
+        ],
+        [
+          3,
+          10,
+          6
+        ]
+      ],
+      "accuracy_class_0": 0.8567567567567568,
+      "accuracy_class_1": 0.4897959183673469,
+      "accuracy_class_2": 0.3157894736842105
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_235210__4_E_T_IV__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_235210__4_E_T_IV__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_235210__4_E_T_IV__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_235210__4_E_T_IV__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-27T23:49:09.418326",
+    "category": "4_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 438,
+      "samples_used": 438,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7671232876712328,
+      "qwk": 0.40691319119602154,
+      "mse": 0.3767123287671233,
+      "mae": 0.2808219178082192,
+      "confusion_matrix": [
+        [
+          303,
+          50,
+          17,
+          0
+        ],
+        [
+          14,
+          28,
+          7,
+          0
+        ],
+        [
+          4,
+          9,
+          5,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.8189189189189189,
+      "accuracy_class_1": 0.5714285714285714,
+      "accuracy_class_2": 0.2631578947368421
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_234909__4_E_T_IV__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_234909__4_E_T_IV__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_234909__4_E_T_IV__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_234909__4_E_T_IV__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-27T23:51:45.870430",
+    "category": "4_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 438,
+      "samples_used": 438,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.817351598173516,
+      "qwk": 0.43387927542103133,
+      "mse": 0.3059360730593607,
+      "mae": 0.2237442922374429,
+      "confusion_matrix": [
+        [
+          329,
+          28,
+          13
+        ],
+        [
+          18,
+          25,
+          6
+        ],
+        [
+          5,
+          10,
+          4
+        ]
+      ],
+      "accuracy_class_0": 0.8891891891891892,
+      "accuracy_class_1": 0.5102040816326531,
+      "accuracy_class_2": 0.21052631578947367
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_235145__4_E_T_IV__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_235145__4_E_T_IV__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_235145__4_E_T_IV__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_235145__4_E_T_IV__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T04:00:35.369066",
+    "category": "4_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 438,
+      "samples_used": 438,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7579908675799086,
+      "qwk": 0.42031862623455263,
+      "mse": 0.365296803652968,
+      "mae": 0.2831050228310502,
+      "confusion_matrix": [
+        [
+          298,
+          58,
+          14,
+          0
+        ],
+        [
+          14,
+          28,
+          7,
+          0
+        ],
+        [
+          4,
+          8,
+          6,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "accuracy_class_0": 0.8054054054054054,
+      "accuracy_class_1": 0.5714285714285714,
+      "accuracy_class_2": 0.3157894736842105
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_040035__4_E_T_IV__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_040035__4_E_T_IV__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_040035__4_E_T_IV__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_040035__4_E_T_IV__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T04:07:30.829802",
+    "category": "4_E_T_IV",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_E_T_IV.csv",
+      "split": "test",
+      "total_samples": 438,
+      "samples_used": 438,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8264840182648402,
+      "qwk": 0.4499555028181549,
+      "mse": 0.2899543378995434,
+      "mae": 0.21232876712328766,
+      "confusion_matrix": [
+        [
+          331,
+          27,
+          12
+        ],
+        [
+          17,
+          27,
+          5
+        ],
+        [
+          5,
+          10,
+          4
+        ]
+      ],
+      "accuracy_class_0": 0.8945945945945946,
+      "accuracy_class_1": 0.5510204081632653,
+      "accuracy_class_2": 0.21052631578947367
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_040730__4_E_T_IV__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_040730__4_E_T_IV__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_040730__4_E_T_IV__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_040730__4_E_T_IV__exp_010"
+    }
+  }
+]

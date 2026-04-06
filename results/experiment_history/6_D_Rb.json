@@ -1,0 +1,580 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T11:48:38.098247",
+    "category": "6_D_Rb",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Sicherung/Transfer - Beschreiben - Reflexion/Begründung. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Sicherung/Transfer - Beschreiben - Reflexion/Begründung\n\nBeschreiben (Description): Rückbezug/Reflexion/Begründung (Rb) in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, dass kein (oder unzureichender) Rückbezug zum Einstieg/zu einer Problem- bzw. Fokusfrage stattfindet (z.B. Einstiegsgeschichte wird nicht wieder aufgegriffen).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Rückbezug/Reflexion\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage („Rückbezug fehlt“) ohne weitere Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- klarer Bezug: Einstieg/Problemfrage wird nicht aufgegriffen; konkrete Hinweise aus der Szene\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_D_Rb.csv",
+      "split": "test",
+      "total_samples": 340,
+      "samples_used": 340,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7205882352941176,
+      "qwk": 0.4000407996736025,
+      "mse": 0.5088235294117647,
+      "mae": 0.3558823529411765,
+      "confusion_matrix": [
+        [
+          232,
+          21,
+          0
+        ],
+        [
+          13,
+          11,
+          0
+        ],
+        [
+          26,
+          35,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.9169960474308301,
+      "accuracy_class_1": 0.4583333333333333,
+      "accuracy_class_2": 0.031746031746031744
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_114838__6_D_Rb__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_114838__6_D_Rb__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_114838__6_D_Rb__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_114838__6_D_Rb__exp_001"
+    },
+    "prompt_hash": "322383e1"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:49:43.961797",
+    "category": "6_D_Rb",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Sicherung/Transfer - Beschreiben - Reflexion/Begründung. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Sicherung/Transfer - Beschreiben - Reflexion/Begründung\n\nBeschreiben (Description): Rückbezug/Reflexion/Begründung (Rb) in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, dass kein (oder unzureichender) Rückbezug zum Einstieg/zu einer Problem- bzw. Fokusfrage stattfindet (z.B. Einstiegsgeschichte wird nicht wieder aufgegriffen).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Rückbezug/Reflexion\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage („Rückbezug fehlt“) ohne weitere Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- klarer Bezug: Einstieg/Problemfrage wird nicht aufgegriffen; konkrete Hinweise aus der Szene\n\n\nExamples:\n\nExample 1:\nText: \"Rückbezug zum Einstieg findet nicht statt\"\nRating: 2\n\nExample 2:\nText: \"Rückbezug zur Fokusfrage\"\nRating: 1\n\nExample 3:\nText: \"Präsentation\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_D_Rb.csv",
+      "split": "test",
+      "total_samples": 340,
+      "samples_used": 340,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8764705882352941,
+      "qwk": 0.8459214501510575,
+      "mse": 0.19411764705882353,
+      "mae": 0.14705882352941177,
+      "confusion_matrix": [
+        [
+          239,
+          11,
+          3
+        ],
+        [
+          7,
+          6,
+          11
+        ],
+        [
+          5,
+          5,
+          53
+        ]
+      ],
+      "accuracy_class_0": 0.9446640316205533,
+      "accuracy_class_1": 0.25,
+      "accuracy_class_2": 0.8412698412698413
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_114943__6_D_Rb__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_114943__6_D_Rb__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_114943__6_D_Rb__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_114943__6_D_Rb__exp_002"
+    },
+    "prompt_hash": "24608b5e"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T19:49:40.690485",
+    "category": "6_D_Rb",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "89fc1dac",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Sicherung/Transfer - Beschreiben - Reflexion/Begründung\n\nBeschreiben (Description): Rückbezug/Reflexion/Begründung (Rb) in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, dass kein (oder unzureichender) Rückbezug zum Einstieg/zu einer Problem- bzw. Fokusfrage stattfindet (z.B. Einstiegsgeschichte wird nicht wieder aufgegriffen).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Rückbezug/Reflexion\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage („Rückbezug fehlt“) ohne weitere Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- klarer Bezug: Einstieg/Problemfrage wird nicht aufgegriffen; konkrete Hinweise aus der Szene\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_D_Rb.csv",
+      "split": "test",
+      "total_samples": 340,
+      "samples_used": 340,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7558823529411764,
+      "qwk": 0.6590257879656161,
+      "mse": 0.28823529411764703,
+      "mae": 0.25882352941176473,
+      "confusion_matrix": [
+        [
+          244,
+          9,
+          0
+        ],
+        [
+          12,
+          12,
+          0
+        ],
+        [
+          5,
+          57,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.9644268774703557,
+      "accuracy_class_1": 0.5,
+      "accuracy_class_2": 0.015873015873015872
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_194940__6_D_Rb__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_194940__6_D_Rb__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_194940__6_D_Rb__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_194940__6_D_Rb__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T19:51:24.300527",
+    "category": "6_D_Rb",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "9bc0570f",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Sicherung/Transfer - Beschreiben - Reflexion/Begründung\n\nBeschreiben (Description): Rückbezug/Reflexion/Begründung (Rb) in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, dass kein (oder unzureichender) Rückbezug zum Einstieg/zu einer Problem- bzw. Fokusfrage stattfindet (z.B. Einstiegsgeschichte wird nicht wieder aufgegriffen).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Rückbezug/Reflexion\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage („Rückbezug fehlt“) ohne weitere Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- klarer Bezug: Einstieg/Problemfrage wird nicht aufgegriffen; konkrete Hinweise aus der Szene\n\n\nExamples:\n\nExample 1:\nText: \"Rückbezug zum Einstieg findet nicht statt\"\nRating: 2\n\nExample 2:\nText: \"Rückbezug zur Fokusfrage\"\nRating: 1\n\nExample 3:\nText: \"Präsentation\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_D_Rb.csv",
+      "split": "test",
+      "total_samples": 340,
+      "samples_used": 340,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.861764705882353,
+      "qwk": 0.8538752913752914,
+      "mse": 0.17352941176470588,
+      "mae": 0.15,
+      "confusion_matrix": [
+        [
+          235,
+          17,
+          1
+        ],
+        [
+          6,
+          11,
+          7
+        ],
+        [
+          3,
+          13,
+          47
+        ]
+      ],
+      "accuracy_class_0": 0.9288537549407114,
+      "accuracy_class_1": 0.4583333333333333,
+      "accuracy_class_2": 0.746031746031746
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_195124__6_D_Rb__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_195124__6_D_Rb__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_195124__6_D_Rb__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_195124__6_D_Rb__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-20T00:34:50.194953",
+    "category": "6_D_Rb",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "7d4703e8",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Sicherung/Transfer - Beschreiben - Reflexion/Begründung\n\nBeschreiben (Description): Rückbezug/Reflexion/Begründung (Rb) in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, dass kein (oder unzureichender) Rückbezug zum Einstieg/zu einer Problem- bzw. Fokusfrage stattfindet (z.B. Einstiegsgeschichte wird nicht wieder aufgegriffen).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Rückbezug/Reflexion\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage („Rückbezug fehlt“) ohne weitere Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- klarer Bezug: Einstieg/Problemfrage wird nicht aufgegriffen; konkrete Hinweise aus der Szene\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_D_Rb.csv",
+      "split": "test",
+      "total_samples": 340,
+      "samples_used": 340,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7470588235294118,
+      "qwk": 0.677901874750698,
+      "mse": 0.27941176470588236,
+      "mae": 0.26176470588235295,
+      "confusion_matrix": [
+        [
+          238,
+          15,
+          0
+        ],
+        [
+          10,
+          13,
+          1
+        ],
+        [
+          3,
+          57,
+          3
+        ]
+      ],
+      "accuracy_class_0": 0.9407114624505929,
+      "accuracy_class_1": 0.5416666666666666,
+      "accuracy_class_2": 0.047619047619047616
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260120_003450__6_D_Rb__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260120_003450__6_D_Rb__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260120_003450__6_D_Rb__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260120_003450__6_D_Rb__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-20T00:39:40.952394",
+    "category": "6_D_Rb",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "0a527584",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Sicherung/Transfer - Beschreiben - Reflexion/Begründung\n\nBeschreiben (Description): Rückbezug/Reflexion/Begründung (Rb) in der Sicherungs-/Transferphase.\n\nKodiert wird, ob die Antwort beschreibt, dass kein (oder unzureichender) Rückbezug zum Einstieg/zu einer Problem- bzw. Fokusfrage stattfindet (z.B. Einstiegsgeschichte wird nicht wieder aufgegriffen).\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Rückbezug/Reflexion\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage („Rückbezug fehlt“) ohne weitere Details\n\n\n2: Systematisches / vollständiges Beschreiben\n- klarer Bezug: Einstieg/Problemfrage wird nicht aufgegriffen; konkrete Hinweise aus der Szene\n\n\nExamples:\n\nExample 1:\nText: \"Rückbezug zum Einstieg findet nicht statt\"\nRating: 2\n\nExample 2:\nText: \"Rückbezug zur Fokusfrage\"\nRating: 1\n\nExample 3:\nText: \"Präsentation\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\6_D_Rb.csv",
+      "split": "test",
+      "total_samples": 340,
+      "samples_used": 340,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7970588235294118,
+      "qwk": 0.7526939655172413,
+      "mse": 0.23823529411764705,
+      "mae": 0.21470588235294116,
+      "confusion_matrix": [
+        [
+          234,
+          19,
+          0
+        ],
+        [
+          6,
+          18,
+          0
+        ],
+        [
+          4,
+          40,
+          19
+        ]
+      ],
+      "accuracy_class_0": 0.924901185770751,
+      "accuracy_class_1": 0.75,
+      "accuracy_class_2": 0.30158730158730157
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260120_003940__6_D_Rb__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260120_003940__6_D_Rb__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260120_003940__6_D_Rb__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260120_003940__6_D_Rb__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-28T00:09:47.129701",
+    "category": "6_D_Rb",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\6_D_Rb.csv",
+      "split": "test",
+      "total_samples": 340,
+      "samples_used": 340,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7970588235294118,
+      "qwk": 0.6675475687103594,
+      "mse": 0.3264705882352941,
+      "mae": 0.24411764705882352,
+      "confusion_matrix": [
+        [
+          237,
+          16,
+          0
+        ],
+        [
+          11,
+          12,
+          1
+        ],
+        [
+          14,
+          27,
+          22
+        ]
+      ],
+      "accuracy_class_0": 0.9367588932806324,
+      "accuracy_class_1": 0.5,
+      "accuracy_class_2": 0.3492063492063492
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_000947__6_D_Rb__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_000947__6_D_Rb__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_000947__6_D_Rb__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_000947__6_D_Rb__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-28T00:11:41.655937",
+    "category": "6_D_Rb",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\6_D_Rb.csv",
+      "split": "test",
+      "total_samples": 340,
+      "samples_used": 340,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.9058823529411765,
+      "qwk": 0.8935685828116107,
+      "mse": 0.12941176470588237,
+      "mae": 0.10588235294117647,
+      "confusion_matrix": [
+        [
+          244,
+          7,
+          2
+        ],
+        [
+          6,
+          12,
+          6
+        ],
+        [
+          2,
+          9,
+          52
+        ]
+      ],
+      "accuracy_class_0": 0.9644268774703557,
+      "accuracy_class_1": 0.5,
+      "accuracy_class_2": 0.8253968253968254
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_001141__6_D_Rb__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_001141__6_D_Rb__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_001141__6_D_Rb__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_001141__6_D_Rb__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T04:55:02.591581",
+    "category": "6_D_Rb",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\6_D_Rb.csv",
+      "split": "test",
+      "total_samples": 340,
+      "samples_used": 340,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8,
+      "qwk": 0.6906927921623514,
+      "mse": 0.3058823529411765,
+      "mae": 0.23529411764705882,
+      "confusion_matrix": [
+        [
+          237,
+          16,
+          0
+        ],
+        [
+          11,
+          12,
+          1
+        ],
+        [
+          12,
+          28,
+          23
+        ]
+      ],
+      "accuracy_class_0": 0.9367588932806324,
+      "accuracy_class_1": 0.5,
+      "accuracy_class_2": 0.36507936507936506
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_045502__6_D_Rb__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_045502__6_D_Rb__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_045502__6_D_Rb__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_045502__6_D_Rb__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T05:00:18.473004",
+    "category": "6_D_Rb",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\6_D_Rb.csv",
+      "split": "test",
+      "total_samples": 340,
+      "samples_used": 340,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.9058823529411765,
+      "qwk": 0.8951499859826184,
+      "mse": 0.12941176470588237,
+      "mae": 0.10588235294117647,
+      "confusion_matrix": [
+        [
+          245,
+          6,
+          2
+        ],
+        [
+          6,
+          10,
+          8
+        ],
+        [
+          2,
+          8,
+          53
+        ]
+      ],
+      "accuracy_class_0": 0.9683794466403162,
+      "accuracy_class_1": 0.4166666666666667,
+      "accuracy_class_2": 0.8412698412698413
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_050018__6_D_Rb__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_050018__6_D_Rb__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_050018__6_D_Rb__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_050018__6_D_Rb__exp_010"
+    }
+  }
+]

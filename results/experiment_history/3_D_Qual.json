@@ -1,0 +1,580 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T11:12:48.419885",
+    "category": "3_D_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Fachsprache - Beschreiben - Qualität. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Fachsprache - Beschreiben - Qualität\n\nBeschreiben (Description): Qualität/Angemessenheit der Sprache (Wissenschaftssprache vs. Unterrichtssprache).\n\nKodiert wird, ob die Antwort beschreibt, dass die Lehrkraft zu anspruchsvolle/zu wissenschaftliche Sprache verwendet, die für SuS schwer verständlich ist (z.B. „taktile Wahrnehmung“), bzw. die Sprache nicht an die Lernenden angepasst ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur (Un-)Angemessenheit der Sprache\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage Hinweise (z.B. „Fachsprache“) ohne nähere Ausführung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: wissenschaftliche/komplizierte Sprache, SuS-Verständnisprobleme, Beispiele aus dem Unterricht\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_Qual.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8490813648293963,
+      "qwk": 0.11247570607451507,
+      "mse": 0.22178477690288714,
+      "mae": 0.17454068241469817,
+      "confusion_matrix": [
+        [
+          642,
+          90,
+          16
+        ],
+        [
+          4,
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.8582887700534759,
+      "accuracy_class_1": 0.4444444444444444,
+      "accuracy_class_2": 0.2
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_111248__3_D_Qual__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_111248__3_D_Qual__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_111248__3_D_Qual__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_111248__3_D_Qual__exp_001"
+    },
+    "prompt_hash": "f52ea7e2"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:15:20.178404",
+    "category": "3_D_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Fachsprache - Beschreiben - Qualität. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Fachsprache - Beschreiben - Qualität\n\nBeschreiben (Description): Qualität/Angemessenheit der Sprache (Wissenschaftssprache vs. Unterrichtssprache).\n\nKodiert wird, ob die Antwort beschreibt, dass die Lehrkraft zu anspruchsvolle/zu wissenschaftliche Sprache verwendet, die für SuS schwer verständlich ist (z.B. „taktile Wahrnehmung“), bzw. die Sprache nicht an die Lernenden angepasst ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur (Un-)Angemessenheit der Sprache\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage Hinweise (z.B. „Fachsprache“) ohne nähere Ausführung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: wissenschaftliche/komplizierte Sprache, SuS-Verständnisprobleme, Beispiele aus dem Unterricht\n\n\nExamples:\n\nExample 1:\nText: \"Fachbegriffe werden eingeführt ohne Erklärung (z.B. Vesikel)\"\nRating: 2\n\nExample 2:\nText: \"Fachsprache-Alltagssprache\"\nRating: 1\n\nExample 3:\nText: \"Längere Zeit zum Anschauen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_Qual.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8727034120734908,
+      "qwk": 0.15142358598970085,
+      "mse": 0.20603674540682415,
+      "mae": 0.15354330708661418,
+      "confusion_matrix": [
+        [
+          658,
+          72,
+          18
+        ],
+        [
+          3,
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.8796791443850267,
+      "accuracy_class_1": 0.5555555555555556,
+      "accuracy_class_2": 0.4
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_111520__3_D_Qual__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_111520__3_D_Qual__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_111520__3_D_Qual__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_111520__3_D_Qual__exp_002"
+    },
+    "prompt_hash": "d9807b62"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T18:54:34.978624",
+    "category": "3_D_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "98f8e0ea",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Fachsprache - Beschreiben - Qualität\n\nBeschreiben (Description): Qualität/Angemessenheit der Sprache (Wissenschaftssprache vs. Unterrichtssprache).\n\nKodiert wird, ob die Antwort beschreibt, dass die Lehrkraft zu anspruchsvolle/zu wissenschaftliche Sprache verwendet, die für SuS schwer verständlich ist (z.B. „taktile Wahrnehmung“), bzw. die Sprache nicht an die Lernenden angepasst ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur (Un-)Angemessenheit der Sprache\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage Hinweise (z.B. „Fachsprache“) ohne nähere Ausführung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: wissenschaftliche/komplizierte Sprache, SuS-Verständnisprobleme, Beispiele aus dem Unterricht\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_Qual.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.9028871391076115,
+      "qwk": 0.17825140683516016,
+      "mse": 0.14435695538057744,
+      "mae": 0.11286089238845144,
+      "confusion_matrix": [
+        [
+          684,
+          54,
+          10
+        ],
+        [
+          6,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.9144385026737968,
+      "accuracy_class_1": 0.2222222222222222,
+      "accuracy_class_2": 0.4
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_185434__3_D_Qual__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_185434__3_D_Qual__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_185434__3_D_Qual__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_185434__3_D_Qual__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T18:58:32.598402",
+    "category": "3_D_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "48835678",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Fachsprache - Beschreiben - Qualität\n\nBeschreiben (Description): Qualität/Angemessenheit der Sprache (Wissenschaftssprache vs. Unterrichtssprache).\n\nKodiert wird, ob die Antwort beschreibt, dass die Lehrkraft zu anspruchsvolle/zu wissenschaftliche Sprache verwendet, die für SuS schwer verständlich ist (z.B. „taktile Wahrnehmung“), bzw. die Sprache nicht an die Lernenden angepasst ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur (Un-)Angemessenheit der Sprache\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage Hinweise (z.B. „Fachsprache“) ohne nähere Ausführung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: wissenschaftliche/komplizierte Sprache, SuS-Verständnisprobleme, Beispiele aus dem Unterricht\n\n\nExamples:\n\nExample 1:\nText: \"Fachbegriffe werden eingeführt ohne Erklärung (z.B. Vesikel)\"\nRating: 2\n\nExample 2:\nText: \"Fachsprache-Alltagssprache\"\nRating: 1\n\nExample 3:\nText: \"Längere Zeit zum Anschauen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_Qual.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8779527559055118,
+      "qwk": 0.1709947495388109,
+      "mse": 0.18110236220472442,
+      "mae": 0.14173228346456693,
+      "confusion_matrix": [
+        [
+          662,
+          73,
+          13
+        ],
+        [
+          3,
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.8850267379679144,
+      "accuracy_class_1": 0.5555555555555556,
+      "accuracy_class_2": 0.4
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_185832__3_D_Qual__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_185832__3_D_Qual__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_185832__3_D_Qual__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_185832__3_D_Qual__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T22:00:52.736458",
+    "category": "3_D_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "8427c44f",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Fachsprache - Beschreiben - Qualität\n\nBeschreiben (Description): Qualität/Angemessenheit der Sprache (Wissenschaftssprache vs. Unterrichtssprache).\n\nKodiert wird, ob die Antwort beschreibt, dass die Lehrkraft zu anspruchsvolle/zu wissenschaftliche Sprache verwendet, die für SuS schwer verständlich ist (z.B. „taktile Wahrnehmung“), bzw. die Sprache nicht an die Lernenden angepasst ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur (Un-)Angemessenheit der Sprache\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage Hinweise (z.B. „Fachsprache“) ohne nähere Ausführung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: wissenschaftliche/komplizierte Sprache, SuS-Verständnisprobleme, Beispiele aus dem Unterricht\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_Qual.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.916010498687664,
+      "qwk": 0.2121838714808334,
+      "mse": 0.1194225721784777,
+      "mae": 0.09580052493438321,
+      "confusion_matrix": [
+        [
+          694,
+          47,
+          7
+        ],
+        [
+          6,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.9278074866310161,
+      "accuracy_class_1": 0.2222222222222222,
+      "accuracy_class_2": 0.4
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_220052__3_D_Qual__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_220052__3_D_Qual__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_220052__3_D_Qual__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_220052__3_D_Qual__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T22:11:46.069977",
+    "category": "3_D_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "125b230c",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Fachsprache - Beschreiben - Qualität\n\nBeschreiben (Description): Qualität/Angemessenheit der Sprache (Wissenschaftssprache vs. Unterrichtssprache).\n\nKodiert wird, ob die Antwort beschreibt, dass die Lehrkraft zu anspruchsvolle/zu wissenschaftliche Sprache verwendet, die für SuS schwer verständlich ist (z.B. „taktile Wahrnehmung“), bzw. die Sprache nicht an die Lernenden angepasst ist.\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zur (Un-)Angemessenheit der Sprache\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage Hinweise (z.B. „Fachsprache“) ohne nähere Ausführung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkret: wissenschaftliche/komplizierte Sprache, SuS-Verständnisprobleme, Beispiele aus dem Unterricht\n\n\nExamples:\n\nExample 1:\nText: \"Fachbegriffe werden eingeführt ohne Erklärung (z.B. Vesikel)\"\nRating: 2\n\nExample 2:\nText: \"Fachsprache-Alltagssprache\"\nRating: 1\n\nExample 3:\nText: \"Längere Zeit zum Anschauen\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_Qual.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8989501312335958,
+      "qwk": 0.2152980281000837,
+      "mse": 0.1325459317585302,
+      "mae": 0.1115485564304462,
+      "confusion_matrix": [
+        [
+          679,
+          63,
+          6
+        ],
+        [
+          4,
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.9077540106951871,
+      "accuracy_class_1": 0.4444444444444444,
+      "accuracy_class_2": 0.4
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_221146__3_D_Qual__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_221146__3_D_Qual__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_221146__3_D_Qual__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_221146__3_D_Qual__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-27T23:04:09.552224",
+    "category": "3_D_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_Qual.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.9238845144356955,
+      "qwk": 0.22154342806938687,
+      "mse": 0.13123359580052493,
+      "mae": 0.09448818897637795,
+      "confusion_matrix": [
+        [
+          700,
+          36,
+          12
+        ],
+        [
+          5,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          2
+        ]
+      ],
+      "accuracy_class_0": 0.9358288770053476,
+      "accuracy_class_1": 0.2222222222222222,
+      "accuracy_class_2": 0.4
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_230409__3_D_Qual__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_230409__3_D_Qual__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_230409__3_D_Qual__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_230409__3_D_Qual__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-27T23:08:28.363210",
+    "category": "3_D_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_Qual.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.9671916010498688,
+      "qwk": 0.29601417851351863,
+      "mse": 0.06430446194225722,
+      "mae": 0.04330708661417323,
+      "confusion_matrix": [
+        [
+          733,
+          9,
+          6
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.9799465240641712,
+      "accuracy_class_1": 0.3333333333333333,
+      "accuracy_class_2": 0.2
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_230828__3_D_Qual__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_230828__3_D_Qual__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_230828__3_D_Qual__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_230828__3_D_Qual__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T02:03:40.119901",
+    "category": "3_D_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_Qual.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.9173228346456693,
+      "qwk": 0.19277984338325405,
+      "mse": 0.13385826771653545,
+      "mae": 0.09973753280839895,
+      "confusion_matrix": [
+        [
+          696,
+          41,
+          11
+        ],
+        [
+          5,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.93048128342246,
+      "accuracy_class_1": 0.2222222222222222,
+      "accuracy_class_2": 0.2
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_020340__3_D_Qual__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_020340__3_D_Qual__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_020340__3_D_Qual__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_020340__3_D_Qual__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T02:15:32.334737",
+    "category": "3_D_Qual",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\3_D_Qual.csv",
+      "split": "test",
+      "total_samples": 762,
+      "samples_used": 762,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.9658792650918635,
+      "qwk": 0.3194495189380101,
+      "mse": 0.05774278215223097,
+      "mae": 0.04199475065616798,
+      "confusion_matrix": [
+        [
+          732,
+          12,
+          4
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "accuracy_class_0": 0.9786096256684492,
+      "accuracy_class_1": 0.3333333333333333,
+      "accuracy_class_2": 0.2
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_021532__3_D_Qual__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_021532__3_D_Qual__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_021532__3_D_Qual__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_021532__3_D_Qual__exp_010"
+    }
+  }
+]

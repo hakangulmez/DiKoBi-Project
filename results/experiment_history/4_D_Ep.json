@@ -1,0 +1,580 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T11:32:39.464587",
+    "category": "4_D_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Experimente - Beschreiben - Erkenntnisgewinnung/Prozesse. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Experimente - Beschreiben - Erkenntnisgewinnung/Prozesse\n\nBeschreiben (Description): Fehlende Schritte im Erkenntnisprozess beim Experimentieren (Scientific Inquiry).\n\nKodiert wird, ob die Antwort beschreibt, dass zentrale Erkenntnisschritte fehlen oder nicht gemeinsam mit SuS erarbeitet werden, z.B.:\n- fehlende Fragestellung (Sinn/Zweck)\n- fehlende Hypothesenbildung\n- Experimentplanung ohne SuS-Beteiligung\n- Auswertung/Interpretation unzureichend (zu wenige Daten/Schülerbeiträge)\n- „rezeptartig“/eher Versuch als Experiment, Ziel unklar\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Erkenntnisprozess\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage (z.B. „keine Fragestellung“) ohne weitere Einbettung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkrete Benennung mehrerer fehlender Schritte/Details (Hypothese, Auswertung, Beteiligung)\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_D_Ep.csv",
+      "split": "test",
+      "total_samples": 473,
+      "samples_used": 473,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.758985200845666,
+      "qwk": 0.6353296956150155,
+      "mse": 0.2727272727272727,
+      "mae": 0.25158562367864695,
+      "confusion_matrix": [
+        [
+          285,
+          61,
+          2
+        ],
+        [
+          23,
+          56,
+          5
+        ],
+        [
+          3,
+          20,
+          18
+        ]
+      ],
+      "accuracy_class_0": 0.8189655172413793,
+      "accuracy_class_1": 0.6666666666666666,
+      "accuracy_class_2": 0.43902439024390244
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_113239__4_D_Ep__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_113239__4_D_Ep__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_113239__4_D_Ep__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_113239__4_D_Ep__exp_001"
+    },
+    "prompt_hash": "70ce5b0d"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:34:15.554995",
+    "category": "4_D_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Experimente - Beschreiben - Erkenntnisgewinnung/Prozesse. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Experimente - Beschreiben - Erkenntnisgewinnung/Prozesse\n\nBeschreiben (Description): Fehlende Schritte im Erkenntnisprozess beim Experimentieren (Scientific Inquiry).\n\nKodiert wird, ob die Antwort beschreibt, dass zentrale Erkenntnisschritte fehlen oder nicht gemeinsam mit SuS erarbeitet werden, z.B.:\n- fehlende Fragestellung (Sinn/Zweck)\n- fehlende Hypothesenbildung\n- Experimentplanung ohne SuS-Beteiligung\n- Auswertung/Interpretation unzureichend (zu wenige Daten/Schülerbeiträge)\n- „rezeptartig“/eher Versuch als Experiment, Ziel unklar\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Erkenntnisprozess\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage (z.B. „keine Fragestellung“) ohne weitere Einbettung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkrete Benennung mehrerer fehlender Schritte/Details (Hypothese, Auswertung, Beteiligung)\n\n\nExamples:\n\nExample 1:\nText: \"Hypothesen generieren fehlt\"\nRating: 2\n\nExample 2:\nText: \"Eigentlich ein Versuch, kein Experiment\"\nRating: 1\n\nExample 3:\nText: \"Klingel\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_D_Ep.csv",
+      "split": "test",
+      "total_samples": 473,
+      "samples_used": 473,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7484143763213531,
+      "qwk": 0.63232451340377,
+      "mse": 0.321353065539112,
+      "mae": 0.2748414376321353,
+      "confusion_matrix": [
+        [
+          287,
+          54,
+          7
+        ],
+        [
+          28,
+          39,
+          17
+        ],
+        [
+          4,
+          9,
+          28
+        ]
+      ],
+      "accuracy_class_0": 0.8247126436781609,
+      "accuracy_class_1": 0.4642857142857143,
+      "accuracy_class_2": 0.6829268292682927
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_113415__4_D_Ep__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_113415__4_D_Ep__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_113415__4_D_Ep__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_113415__4_D_Ep__exp_002"
+    },
+    "prompt_hash": "34507a4a"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T19:25:03.543273",
+    "category": "4_D_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "820aa6c4",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Experimente - Beschreiben - Erkenntnisgewinnung/Prozesse\n\nBeschreiben (Description): Fehlende Schritte im Erkenntnisprozess beim Experimentieren (Scientific Inquiry).\n\nKodiert wird, ob die Antwort beschreibt, dass zentrale Erkenntnisschritte fehlen oder nicht gemeinsam mit SuS erarbeitet werden, z.B.:\n- fehlende Fragestellung (Sinn/Zweck)\n- fehlende Hypothesenbildung\n- Experimentplanung ohne SuS-Beteiligung\n- Auswertung/Interpretation unzureichend (zu wenige Daten/Schülerbeiträge)\n- „rezeptartig“/eher Versuch als Experiment, Ziel unklar\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Erkenntnisprozess\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage (z.B. „keine Fragestellung“) ohne weitere Einbettung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkrete Benennung mehrerer fehlender Schritte/Details (Hypothese, Auswertung, Beteiligung)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_D_Ep.csv",
+      "split": "test",
+      "total_samples": 473,
+      "samples_used": 473,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7758985200845666,
+      "qwk": 0.6255742200891325,
+      "mse": 0.26849894291754756,
+      "mae": 0.23890063424947147,
+      "confusion_matrix": [
+        [
+          298,
+          48,
+          2
+        ],
+        [
+          26,
+          54,
+          4
+        ],
+        [
+          5,
+          21,
+          15
+        ]
+      ],
+      "accuracy_class_0": 0.8563218390804598,
+      "accuracy_class_1": 0.6428571428571429,
+      "accuracy_class_2": 0.36585365853658536
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_192503__4_D_Ep__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_192503__4_D_Ep__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_192503__4_D_Ep__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_192503__4_D_Ep__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T19:27:30.992477",
+    "category": "4_D_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "48631f2b",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Experimente - Beschreiben - Erkenntnisgewinnung/Prozesse\n\nBeschreiben (Description): Fehlende Schritte im Erkenntnisprozess beim Experimentieren (Scientific Inquiry).\n\nKodiert wird, ob die Antwort beschreibt, dass zentrale Erkenntnisschritte fehlen oder nicht gemeinsam mit SuS erarbeitet werden, z.B.:\n- fehlende Fragestellung (Sinn/Zweck)\n- fehlende Hypothesenbildung\n- Experimentplanung ohne SuS-Beteiligung\n- Auswertung/Interpretation unzureichend (zu wenige Daten/Schülerbeiträge)\n- „rezeptartig“/eher Versuch als Experiment, Ziel unklar\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Erkenntnisprozess\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage (z.B. „keine Fragestellung“) ohne weitere Einbettung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkrete Benennung mehrerer fehlender Schritte/Details (Hypothese, Auswertung, Beteiligung)\n\n\nExamples:\n\nExample 1:\nText: \"Hypothesen generieren fehlt\"\nRating: 2\n\nExample 2:\nText: \"Eigentlich ein Versuch, kein Experiment\"\nRating: 1\n\nExample 3:\nText: \"Klingel\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_D_Ep.csv",
+      "split": "test",
+      "total_samples": 473,
+      "samples_used": 473,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7399577167019028,
+      "qwk": 0.6013004997290625,
+      "mse": 0.35517970401691334,
+      "mae": 0.2917547568710359,
+      "confusion_matrix": [
+        [
+          276,
+          61,
+          11
+        ],
+        [
+          20,
+          48,
+          16
+        ],
+        [
+          4,
+          11,
+          26
+        ]
+      ],
+      "accuracy_class_0": 0.7931034482758621,
+      "accuracy_class_1": 0.5714285714285714,
+      "accuracy_class_2": 0.6341463414634146
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_192730__4_D_Ep__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_192730__4_D_Ep__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_192730__4_D_Ep__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_192730__4_D_Ep__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T23:26:15.790207",
+    "category": "4_D_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "91f3070c",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Experimente - Beschreiben - Erkenntnisgewinnung/Prozesse\n\nBeschreiben (Description): Fehlende Schritte im Erkenntnisprozess beim Experimentieren (Scientific Inquiry).\n\nKodiert wird, ob die Antwort beschreibt, dass zentrale Erkenntnisschritte fehlen oder nicht gemeinsam mit SuS erarbeitet werden, z.B.:\n- fehlende Fragestellung (Sinn/Zweck)\n- fehlende Hypothesenbildung\n- Experimentplanung ohne SuS-Beteiligung\n- Auswertung/Interpretation unzureichend (zu wenige Daten/Schülerbeiträge)\n- „rezeptartig“/eher Versuch als Experiment, Ziel unklar\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Erkenntnisprozess\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage (z.B. „keine Fragestellung“) ohne weitere Einbettung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkrete Benennung mehrerer fehlender Schritte/Details (Hypothese, Auswertung, Beteiligung)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_D_Ep.csv",
+      "split": "test",
+      "total_samples": 473,
+      "samples_used": 473,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7864693446088795,
+      "qwk": 0.61603055466837,
+      "mse": 0.25792811839323465,
+      "mae": 0.22832980972515857,
+      "confusion_matrix": [
+        [
+          312,
+          34,
+          2
+        ],
+        [
+          30,
+          51,
+          3
+        ],
+        [
+          5,
+          27,
+          9
+        ]
+      ],
+      "accuracy_class_0": 0.896551724137931,
+      "accuracy_class_1": 0.6071428571428571,
+      "accuracy_class_2": 0.21951219512195122
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_232615__4_D_Ep__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_232615__4_D_Ep__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_232615__4_D_Ep__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_232615__4_D_Ep__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T23:33:08.749282",
+    "category": "4_D_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "c60e266f",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Experimente - Beschreiben - Erkenntnisgewinnung/Prozesse\n\nBeschreiben (Description): Fehlende Schritte im Erkenntnisprozess beim Experimentieren (Scientific Inquiry).\n\nKodiert wird, ob die Antwort beschreibt, dass zentrale Erkenntnisschritte fehlen oder nicht gemeinsam mit SuS erarbeitet werden, z.B.:\n- fehlende Fragestellung (Sinn/Zweck)\n- fehlende Hypothesenbildung\n- Experimentplanung ohne SuS-Beteiligung\n- Auswertung/Interpretation unzureichend (zu wenige Daten/Schülerbeiträge)\n- „rezeptartig“/eher Versuch als Experiment, Ziel unklar\n\n\nRating Scale:\n0: trifft nicht zu\n- keine Description ODER kein Bezug zum Erkenntnisprozess\n\n\n1: Unsystematisches / unvollständiges Beschreiben\n- vage (z.B. „keine Fragestellung“) ohne weitere Einbettung\n\n\n2: Systematisches / vollständiges Beschreiben\n- konkrete Benennung mehrerer fehlender Schritte/Details (Hypothese, Auswertung, Beteiligung)\n\n\nExamples:\n\nExample 1:\nText: \"Hypothesen generieren fehlt\"\nRating: 2\n\nExample 2:\nText: \"Eigentlich ein Versuch, kein Experiment\"\nRating: 1\n\nExample 3:\nText: \"Klingel\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\4_D_Ep.csv",
+      "split": "test",
+      "total_samples": 473,
+      "samples_used": 473,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.773784355179704,
+      "qwk": 0.6579067957091356,
+      "mse": 0.2769556025369979,
+      "mae": 0.24312896405919662,
+      "confusion_matrix": [
+        [
+          291,
+          54,
+          3
+        ],
+        [
+          25,
+          49,
+          10
+        ],
+        [
+          5,
+          10,
+          26
+        ]
+      ],
+      "accuracy_class_0": 0.8362068965517241,
+      "accuracy_class_1": 0.5833333333333334,
+      "accuracy_class_2": 0.6341463414634146
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_233308__4_D_Ep__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_233308__4_D_Ep__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_233308__4_D_Ep__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_233308__4_D_Ep__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-27T23:40:44.642746",
+    "category": "4_D_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_D_Ep.csv",
+      "split": "test",
+      "total_samples": 473,
+      "samples_used": 473,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7885835095137421,
+      "qwk": 0.673563954993037,
+      "mse": 0.23678646934460887,
+      "mae": 0.21987315010570824,
+      "confusion_matrix": [
+        [
+          307,
+          41,
+          0
+        ],
+        [
+          28,
+          49,
+          7
+        ],
+        [
+          4,
+          20,
+          17
+        ]
+      ],
+      "accuracy_class_0": 0.882183908045977,
+      "accuracy_class_1": 0.5833333333333334,
+      "accuracy_class_2": 0.4146341463414634
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_234044__4_D_Ep__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_234044__4_D_Ep__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_234044__4_D_Ep__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_234044__4_D_Ep__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-27T23:43:27.339020",
+    "category": "4_D_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_D_Ep.csv",
+      "split": "test",
+      "total_samples": 473,
+      "samples_used": 473,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8245243128964059,
+      "qwk": 0.7022617215010003,
+      "mse": 0.2135306553911205,
+      "mae": 0.18816067653276955,
+      "confusion_matrix": [
+        [
+          321,
+          26,
+          1
+        ],
+        [
+          26,
+          52,
+          6
+        ],
+        [
+          5,
+          19,
+          17
+        ]
+      ],
+      "accuracy_class_0": 0.9224137931034483,
+      "accuracy_class_1": 0.6190476190476191,
+      "accuracy_class_2": 0.4146341463414634
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260127_234327__4_D_Ep__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260127_234327__4_D_Ep__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260127_234327__4_D_Ep__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260127_234327__4_D_Ep__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T03:38:47.094809",
+    "category": "4_D_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_D_Ep.csv",
+      "split": "test",
+      "total_samples": 473,
+      "samples_used": 473,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7843551797040169,
+      "qwk": 0.6565302690582959,
+      "mse": 0.24101479915433405,
+      "mae": 0.22410147991543342,
+      "confusion_matrix": [
+        [
+          307,
+          41,
+          0
+        ],
+        [
+          27,
+          51,
+          6
+        ],
+        [
+          4,
+          24,
+          13
+        ]
+      ],
+      "accuracy_class_0": 0.882183908045977,
+      "accuracy_class_1": 0.6071428571428571,
+      "accuracy_class_2": 0.3170731707317073
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_033847__4_D_Ep__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_033847__4_D_Ep__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_033847__4_D_Ep__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_033847__4_D_Ep__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T03:46:12.600182",
+    "category": "4_D_Ep",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\4_D_Ep.csv",
+      "split": "test",
+      "total_samples": 473,
+      "samples_used": 473,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8245243128964059,
+      "qwk": 0.7062418909529168,
+      "mse": 0.2135306553911205,
+      "mae": 0.18816067653276955,
+      "confusion_matrix": [
+        [
+          321,
+          26,
+          1
+        ],
+        [
+          26,
+          51,
+          7
+        ],
+        [
+          5,
+          18,
+          18
+        ]
+      ],
+      "accuracy_class_0": 0.9224137931034483,
+      "accuracy_class_1": 0.6071428571428571,
+      "accuracy_class_2": 0.43902439024390244
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_034612__4_D_Ep__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_034612__4_D_Ep__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_034612__4_D_Ep__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_034612__4_D_Ep__exp_010"
+    }
+  }
+]

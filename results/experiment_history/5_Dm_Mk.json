@@ -1,0 +1,580 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-15T11:44:57.433196",
+    "category": "5_Dm_Mk",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Modelle - Beschreiben/Merken - Modellkompetenz. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Modelle - Beschreiben/Merken - Modellkompetenz\n\nDecision Making (Dm): Handlungsalternative zur Modellkritik / Förderung der Modellkompetenz.\n\nKodiert wird, ob die Antwort beschreibt, wie Modellkritik eingebaut werden soll (Entsprechungen, Grenzen, Beiwerk; Vergleich zum Original; Vor-/Nachteile; ggf. mehrere Modelle), um Fehlvorstellungen zu vermeiden.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur Modellkritik/Modellkompetenz\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Modellkritik durchführen“ ohne Details\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- nennt konkrete Kritikpunkte/Aspekte (Grenzen/Beiwerk/Entsprechungen, Vergleich Original–Modell)\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_Dm_Mk.csv",
+      "split": "test",
+      "total_samples": 222,
+      "samples_used": 222,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6846846846846847,
+      "qwk": 0.6263784932902254,
+      "mse": 0.34234234234234234,
+      "mae": 0.32432432432432434,
+      "confusion_matrix": [
+        [
+          107,
+          46,
+          2
+        ],
+        [
+          1,
+          36,
+          20
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ],
+      "accuracy_class_0": 0.6903225806451613,
+      "accuracy_class_1": 0.631578947368421,
+      "accuracy_class_2": 0.9
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_114457__5_Dm_Mk__exp_001\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_114457__5_Dm_Mk__exp_001\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_114457__5_Dm_Mk__exp_001\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_114457__5_Dm_Mk__exp_001"
+    },
+    "prompt_hash": "90d380af"
+  },
+  {
+    "experiment_id": "exp_002",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-15T11:45:43.244474",
+    "category": "5_Dm_Mk",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert coder in biology education research. Category: Modelle - Beschreiben/Merken - Modellkompetenz. Rate ONLY this category (do not infer other categories/aspects). Use ONLY the definition and rating scale provided below. Reply EXACTLY with 'Rating: X' where X is one of: 0, 1, 2. Do NOT add explanation or extra text.\n\nCategory: Modelle - Beschreiben/Merken - Modellkompetenz\n\nDecision Making (Dm): Handlungsalternative zur Modellkritik / Förderung der Modellkompetenz.\n\nKodiert wird, ob die Antwort beschreibt, wie Modellkritik eingebaut werden soll (Entsprechungen, Grenzen, Beiwerk; Vergleich zum Original; Vor-/Nachteile; ggf. mehrere Modelle), um Fehlvorstellungen zu vermeiden.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur Modellkritik/Modellkompetenz\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Modellkritik durchführen“ ohne Details\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- nennt konkrete Kritikpunkte/Aspekte (Grenzen/Beiwerk/Entsprechungen, Vergleich Original–Modell)\n\n\nExamples:\n\nExample 1:\nText: \"Modellkritik mit den Schülern besprechen: Leistungen, Grenzen, Vergleich mit der Realität\"\nRating: 2\n\nExample 2:\nText: \"Man sollte den Kindern bewusst machen, dass das Modell so nicht der Realität entspricht\"\nRating: 1\n\nExample 3:\nText: \"Nicht verbesserungsfähig\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_Dm_Mk.csv",
+      "split": "test",
+      "total_samples": 222,
+      "samples_used": 222,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7342342342342343,
+      "qwk": 0.6856964397251717,
+      "mse": 0.3063063063063063,
+      "mae": 0.27927927927927926,
+      "confusion_matrix": [
+        [
+          124,
+          28,
+          3
+        ],
+        [
+          2,
+          29,
+          26
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ],
+      "accuracy_class_0": 0.8,
+      "accuracy_class_1": 0.5087719298245614,
+      "accuracy_class_2": 1.0
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260115_114543__5_Dm_Mk__exp_002\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260115_114543__5_Dm_Mk__exp_002\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260115_114543__5_Dm_Mk__exp_002\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260115_114543__5_Dm_Mk__exp_002"
+    },
+    "prompt_hash": "82e32849"
+  },
+  {
+    "experiment_id": "exp_003",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-19T19:43:56.202623",
+    "category": "5_Dm_Mk",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "395b6fbe",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Modelle - Beschreiben/Merken - Modellkompetenz\n\nDecision Making (Dm): Handlungsalternative zur Modellkritik / Förderung der Modellkompetenz.\n\nKodiert wird, ob die Antwort beschreibt, wie Modellkritik eingebaut werden soll (Entsprechungen, Grenzen, Beiwerk; Vergleich zum Original; Vor-/Nachteile; ggf. mehrere Modelle), um Fehlvorstellungen zu vermeiden.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur Modellkritik/Modellkompetenz\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Modellkritik durchführen“ ohne Details\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- nennt konkrete Kritikpunkte/Aspekte (Grenzen/Beiwerk/Entsprechungen, Vergleich Original–Modell)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_Dm_Mk.csv",
+      "split": "test",
+      "total_samples": 222,
+      "samples_used": 222,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.6981981981981982,
+      "qwk": 0.6262626262626263,
+      "mse": 0.38288288288288286,
+      "mae": 0.32882882882882886,
+      "confusion_matrix": [
+        [
+          127,
+          22,
+          6
+        ],
+        [
+          8,
+          19,
+          30
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ],
+      "accuracy_class_0": 0.8193548387096774,
+      "accuracy_class_1": 0.3333333333333333,
+      "accuracy_class_2": 0.9
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_194356__5_Dm_Mk__exp_003\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_194356__5_Dm_Mk__exp_003\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_194356__5_Dm_Mk__exp_003\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_194356__5_Dm_Mk__exp_003"
+    }
+  },
+  {
+    "experiment_id": "exp_004",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-19T19:45:06.218789",
+    "category": "5_Dm_Mk",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "ec451759",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Reply with exactly one line in the form \"Rating: X\" where X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return \"Rating: 0\".\nDo NOT include any other text.\n\nCategory: Modelle - Beschreiben/Merken - Modellkompetenz\n\nDecision Making (Dm): Handlungsalternative zur Modellkritik / Förderung der Modellkompetenz.\n\nKodiert wird, ob die Antwort beschreibt, wie Modellkritik eingebaut werden soll (Entsprechungen, Grenzen, Beiwerk; Vergleich zum Original; Vor-/Nachteile; ggf. mehrere Modelle), um Fehlvorstellungen zu vermeiden.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur Modellkritik/Modellkompetenz\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Modellkritik durchführen“ ohne Details\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- nennt konkrete Kritikpunkte/Aspekte (Grenzen/Beiwerk/Entsprechungen, Vergleich Original–Modell)\n\n\nExamples:\n\nExample 1:\nText: \"Modellkritik mit den Schülern besprechen: Leistungen, Grenzen, Vergleich mit der Realität\"\nRating: 2\n\nExample 2:\nText: \"Man sollte den Kindern bewusst machen, dass das Modell so nicht der Realität entspricht\"\nRating: 1\n\nExample 3:\nText: \"Nicht verbesserungsfähig\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\nRating:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_Dm_Mk.csv",
+      "split": "test",
+      "total_samples": 222,
+      "samples_used": 222,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7387387387387387,
+      "qwk": 0.686276093188517,
+      "mse": 0.3153153153153153,
+      "mae": 0.27927927927927926,
+      "confusion_matrix": [
+        [
+          130,
+          21,
+          4
+        ],
+        [
+          4,
+          24,
+          29
+        ],
+        [
+          0,
+          0,
+          10
+        ]
+      ],
+      "accuracy_class_0": 0.8387096774193549,
+      "accuracy_class_1": 0.42105263157894735,
+      "accuracy_class_2": 1.0
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260119_194506__5_Dm_Mk__exp_004\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260119_194506__5_Dm_Mk__exp_004\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260119_194506__5_Dm_Mk__exp_004\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260119_194506__5_Dm_Mk__exp_004"
+    }
+  },
+  {
+    "experiment_id": "exp_005",
+    "version": "phase2_batch_zero_shot",
+    "timestamp": "2026-01-20T00:18:51.686058",
+    "category": "5_Dm_Mk",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "b1df67ba",
+    "prompt_template": "zero_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Modelle - Beschreiben/Merken - Modellkompetenz\n\nDecision Making (Dm): Handlungsalternative zur Modellkritik / Förderung der Modellkompetenz.\n\nKodiert wird, ob die Antwort beschreibt, wie Modellkritik eingebaut werden soll (Entsprechungen, Grenzen, Beiwerk; Vergleich zum Original; Vor-/Nachteile; ggf. mehrere Modelle), um Fehlvorstellungen zu vermeiden.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur Modellkritik/Modellkompetenz\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Modellkritik durchführen“ ohne Details\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- nennt konkrete Kritikpunkte/Aspekte (Grenzen/Beiwerk/Entsprechungen, Vergleich Original–Modell)\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_Dm_Mk.csv",
+      "split": "test",
+      "total_samples": 222,
+      "samples_used": 222,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7522522522522522,
+      "qwk": 0.6946286023542145,
+      "mse": 0.2747747747747748,
+      "mae": 0.25675675675675674,
+      "confusion_matrix": [
+        [
+          129,
+          24,
+          2
+        ],
+        [
+          6,
+          29,
+          22
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ],
+      "accuracy_class_0": 0.832258064516129,
+      "accuracy_class_1": 0.5087719298245614,
+      "accuracy_class_2": 0.9
+    },
+    "notes": "Phase 2 batch run: zero_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260120_001851__5_Dm_Mk__exp_005\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260120_001851__5_Dm_Mk__exp_005\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260120_001851__5_Dm_Mk__exp_005\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260120_001851__5_Dm_Mk__exp_005"
+    }
+  },
+  {
+    "experiment_id": "exp_006",
+    "version": "phase2_batch_few_shot",
+    "timestamp": "2026-01-20T00:22:03.073040",
+    "category": "5_Dm_Mk",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false
+    },
+    "prompt_hash": "660c2b81",
+    "prompt_template": "few_shot",
+    "prompt_text": "You are an expert human coder in biology education research.\n\nTask: Assign ONE integer rating for the given category ONLY.\nUse ONLY the category definition and rating scale provided below.\nDo NOT infer or score any other categories/aspects.\n\nOutput format: Respond with valid JSON in this exact format:\n{\n  \"rating\": X,\n  \"explanation\": \"brief justification (1-2 sentences)\"\n}\n\nWhere X is a valid integer rating.\nIf the text is unrelated to the category or provides no evidence, return rating 0.\nYour response must be valid JSON only - no other text before or after.\n\nCategory: Modelle - Beschreiben/Merken - Modellkompetenz\n\nDecision Making (Dm): Handlungsalternative zur Modellkritik / Förderung der Modellkompetenz.\n\nKodiert wird, ob die Antwort beschreibt, wie Modellkritik eingebaut werden soll (Entsprechungen, Grenzen, Beiwerk; Vergleich zum Original; Vor-/Nachteile; ggf. mehrere Modelle), um Fehlvorstellungen zu vermeiden.\n\nRating Scale:\n0: trifft nicht zu\n- kein Vorschlag zur Modellkritik/Modellkompetenz\n\n\n1: Handlungsalternative mit Bezug, aber eher allgemein\n- z.B. „Modellkritik durchführen“ ohne Details\n\n\n2: Handlungsalternative mit Bezug, konkret/ausführlich\n- nennt konkrete Kritikpunkte/Aspekte (Grenzen/Beiwerk/Entsprechungen, Vergleich Original–Modell)\n\n\nExamples:\n\nExample 1:\nText: \"Modellkritik mit den Schülern besprechen: Leistungen, Grenzen, Vergleich mit der Realität\"\nRating: 2\n\nExample 2:\nText: \"Man sollte den Kindern bewusst machen, dass das Modell so nicht der Realität entspricht\"\nRating: 1\n\nExample 3:\nText: \"Nicht verbesserungsfähig\"\nRating: 0\n\n\n\nText to rate:\n\"[SAMPLE TEXT]\"\n\nValid ratings: 0, 1, 2\n\nRespond with valid JSON only:",
+    "dataset": {
+      "path": "data\\processed\\test\\5_Dm_Mk.csv",
+      "split": "test",
+      "total_samples": 222,
+      "samples_used": 222,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.7387387387387387,
+      "qwk": 0.6979720249989372,
+      "mse": 0.2882882882882883,
+      "mae": 0.2702702702702703,
+      "confusion_matrix": [
+        [
+          129,
+          24,
+          2
+        ],
+        [
+          4,
+          26,
+          27
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ],
+      "accuracy_class_0": 0.832258064516129,
+      "accuracy_class_1": 0.45614035087719296,
+      "accuracy_class_2": 0.9
+    },
+    "notes": "Phase 2 batch run: few_shot",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260120_002203__5_Dm_Mk__exp_006\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260120_002203__5_Dm_Mk__exp_006\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260120_002203__5_Dm_Mk__exp_006\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260120_002203__5_Dm_Mk__exp_006"
+    }
+  },
+  {
+    "experiment_id": "exp_007",
+    "version": "exp_007",
+    "timestamp": "2026-01-28T00:02:59.304666",
+    "category": "5_Dm_Mk",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\5_Dm_Mk.csv",
+      "split": "test",
+      "total_samples": 222,
+      "samples_used": 222,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8153153153153153,
+      "qwk": 0.7427387938261256,
+      "mse": 0.21171171171171171,
+      "mae": 0.19369369369369369,
+      "confusion_matrix": [
+        [
+          134,
+          19,
+          2
+        ],
+        [
+          4,
+          38,
+          15
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ],
+      "accuracy_class_0": 0.864516129032258,
+      "accuracy_class_1": 0.6666666666666666,
+      "accuracy_class_2": 0.9
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_000259__5_Dm_Mk__exp_007\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_000259__5_Dm_Mk__exp_007\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_000259__5_Dm_Mk__exp_007\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_000259__5_Dm_Mk__exp_007"
+    }
+  },
+  {
+    "experiment_id": "exp_008",
+    "version": "exp_008",
+    "timestamp": "2026-01-28T00:04:20.874944",
+    "category": "5_Dm_Mk",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "text",
+    "generation_params": {
+      "max_new_tokens": 5,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\5_Dm_Mk.csv",
+      "split": "test",
+      "total_samples": 222,
+      "samples_used": 222,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8423423423423423,
+      "qwk": 0.7187452490751532,
+      "mse": 0.22522522522522523,
+      "mae": 0.18018018018018017,
+      "confusion_matrix": [
+        [
+          137,
+          13,
+          5
+        ],
+        [
+          2,
+          43,
+          12
+        ],
+        [
+          0,
+          3,
+          7
+        ]
+      ],
+      "accuracy_class_0": 0.8838709677419355,
+      "accuracy_class_1": 0.7543859649122807,
+      "accuracy_class_2": 0.7
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_000420__5_Dm_Mk__exp_008\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_000420__5_Dm_Mk__exp_008\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_000420__5_Dm_Mk__exp_008\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_000420__5_Dm_Mk__exp_008"
+    }
+  },
+  {
+    "experiment_id": "exp_009",
+    "version": "exp_009",
+    "timestamp": "2026-01-28T04:37:12.776646",
+    "category": "5_Dm_Mk",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": true
+    },
+    "prompt_hash": "f0f206d0",
+    "prompt_template": "rag_balanced",
+    "prompt_text": "[RAG Balanced] Dynamic examples from retriever (n=3, balanced by rating)",
+    "dataset": {
+      "path": "data\\processed\\test\\5_Dm_Mk.csv",
+      "split": "test",
+      "total_samples": 222,
+      "samples_used": 222,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8198198198198198,
+      "qwk": 0.7612186702686478,
+      "mse": 0.19369369369369369,
+      "mae": 0.18468468468468469,
+      "confusion_matrix": [
+        [
+          135,
+          19,
+          1
+        ],
+        [
+          4,
+          38,
+          15
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ],
+      "accuracy_class_0": 0.8709677419354839,
+      "accuracy_class_1": 0.6666666666666666,
+      "accuracy_class_2": 0.9
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_043712__5_Dm_Mk__exp_009\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_043712__5_Dm_Mk__exp_009\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_043712__5_Dm_Mk__exp_009\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_043712__5_Dm_Mk__exp_009"
+    }
+  },
+  {
+    "experiment_id": "exp_010",
+    "version": "exp_010",
+    "timestamp": "2026-01-28T04:40:46.342009",
+    "category": "5_Dm_Mk",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "quantization": "8bit",
+    "output_format": "json",
+    "generation_params": {
+      "max_new_tokens": 15,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "do_sample": false,
+      "batch_size": 2,
+      "n_examples": 3,
+      "balanced": false
+    },
+    "prompt_hash": "8f5b6155",
+    "prompt_template": "rag_similarity",
+    "prompt_text": "[RAG Similarity] Dynamic examples from retriever (n=3, similarity-based)",
+    "dataset": {
+      "path": "data\\processed\\test\\5_Dm_Mk.csv",
+      "split": "test",
+      "total_samples": 222,
+      "samples_used": 222,
+      "max_samples": null
+    },
+    "metrics": {
+      "accuracy": 0.8378378378378378,
+      "qwk": 0.7320862875245134,
+      "mse": 0.21621621621621623,
+      "mae": 0.18018018018018017,
+      "confusion_matrix": [
+        [
+          138,
+          13,
+          4
+        ],
+        [
+          4,
+          40,
+          13
+        ],
+        [
+          0,
+          2,
+          8
+        ]
+      ],
+      "accuracy_class_0": 0.8903225806451613,
+      "accuracy_class_1": 0.7017543859649122,
+      "accuracy_class_2": 0.8
+    },
+    "notes": "",
+    "artifacts": {
+      "predictions_csv": "data\\experiments\\experiment_20260128_044046__5_Dm_Mk__exp_010\\predictions.csv",
+      "experiment_json": "data\\experiments\\experiment_20260128_044046__5_Dm_Mk__exp_010\\experiment.json",
+      "bundle_json": "data\\experiments\\experiment_20260128_044046__5_Dm_Mk__exp_010\\bundle.json",
+      "run_dir": "data\\experiments\\experiment_20260128_044046__5_Dm_Mk__exp_010"
+    }
+  }
+]
